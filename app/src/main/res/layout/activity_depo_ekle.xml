@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E9F1"
+    tools:context=".DepoEkle">
+
+    <TextView
+        android:id="@+id/txt_depoekle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="DEPO EKLE"
+        android:textColor="#4269AD"
+        android:textSize="25dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_depo_isim"
+        android:layout_width="360dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_tv2"
+        android:ems="10"
+        android:drawableLeft="@drawable/icon_bos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_depo_id" />
+
+    <EditText
+        android:id="@+id/et_depo_id"
+        android:layout_width="360dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/bg_tv2"
+        android:ems="10"
+        android:drawableLeft="@drawable/icon_bos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_depoekle" />
+
+    <EditText
+        android:id="@+id/et_sehirkodu"
+        android:layout_width="173dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/bg_tv2"
+        android:ems="10"
+        android:drawableLeft="@drawable/icon_bos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_depo_isim" />
+
+    <Button
+        android:id="@+id/btn_depokaydet"
+        android:layout_width="120dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="40dp"
+        android:text="Kaydet"
+        android:background="@drawable/bg_btn_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toEndOf="@+id/et_sehirkodu"
+        app:layout_constraintTop_toBottomOf="@+id/et_depo_isim" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Depo İsim"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/et_depo_isim"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="Depo ID"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/et_depo_id"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="Şehir Kodu"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/et_sehirkodu"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
