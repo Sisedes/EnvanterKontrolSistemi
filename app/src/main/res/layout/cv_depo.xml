@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="410dp"
+    android:layout_height="110dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="409dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="88dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="28dp"
+                android:background="#DBA051"
+                android:text="       "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="326dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"
+                android:background="#FFF7EE"
+                android:text="       "
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.233"
+                app:layout_constraintStart_toEndOf="@+id/tv_depoid"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.533" />
+
+            <TextView
+                android:id="@+id/tv_depoid"
+                android:layout_width="81dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="4dp"
+
+                android:paddingStart="15dp"
+                android:text="Depo ID"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView25" />
+
+            <TextView
+                android:id="@+id/tv_depoadi"
+                android:layout_width="123dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="5dp"
+                android:text="Depo Adı"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toEndOf="@+id/tv_depoid"
+                app:layout_constraintTop_toTopOf="@+id/textView26" />
+
+
+            <TextView
+                android:id="@+id/tv_deposehir"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="176dp"
+                android:layout_marginTop="1dp"
+                android:text="Istanbul"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView26"
+                app:layout_constraintTop_toTopOf="@+id/tv_depoadi" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView26"
+                app:srcCompat="@drawable/icon_sil" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -26,10 +26,10 @@
         android:layout_height="49dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/bg_tv2"
-        android:ems="10"
         android:drawableLeft="@drawable/icon_bos"
+        android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_depo_id" />
 
@@ -39,10 +39,10 @@
         android:layout_height="49dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/bg_tv2"
-        android:ems="10"
         android:drawableLeft="@drawable/icon_bos"
+        android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_depoekle" />
 
@@ -50,12 +50,12 @@
         android:id="@+id/et_sehirkodu"
         android:layout_width="173dp"
         android:layout_height="50dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/bg_tv2"
-        android:ems="10"
         android:drawableLeft="@drawable/icon_bos"
+        android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_depo_isim" />
 
@@ -75,7 +75,7 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="20dp"
         android:text="Depo İsim"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_depo_isim"
@@ -85,7 +85,7 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="20dp"
         android:text="Depo ID"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_depo_id"
@@ -95,10 +95,10 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="20dp"
         android:text="Şehir Kodu"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_sehirkodu"
         app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
