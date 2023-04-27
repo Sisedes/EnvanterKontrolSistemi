@@ -1,7 +1,6 @@
 package com.example.envanteryonetimsistemi;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,7 +8,6 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class AlisEkle extends AppCompatActivity {
@@ -33,20 +31,31 @@ BaglantiYardimcisi baglantiYardimcisi=new BaglantiYardimcisi();
         String etadet_text = etadet.getText().toString();
 
         Button btnaliskaydet = (Button) findViewById(R.id.btn_aliskaydet);
+
         btnaliskaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Connection bag;
+                String bagSonucu="";
                 try
                 {
-                    Connection bag = BaglantiYardimcisi.baglantiSinifi();
-                    String islem = "INSERT INTO alis_bilgi (alis_id,satici_id,urun_id,urun_adet) VALUES ("+etalis_text+","+ettedarikci_text+","+eturun_Text+","+etadet_text+")";
-                    Statement stmt = bag.createStatement();
-                    stmt.executeUpdate(islem);
+                    BaglantiYardimcisi yardimci=new BaglantiYardimcisi();
+                    bag=yardimci.baglanti();
+                    if(bag!=null)
+                    { String values=etalis_text+", "+ettedarikci_text+", "+eturun_Text+", "+0+", "+etadet_text;
+                        String query="INSERT INTO alis_bilgi(alis_id,satici_id,urun_id,depo_id,urun_adet) VALUES("+values+")";
+                        Statement durum=bag.createStatement();
+                        durum.executeUpdate(query);
+
+                    }
+                    else
+                    {
+                        bagSonucu="Baglantinizi Kontrol Edin";
+                    }
                 }
-                catch (SQLException se)
+                catch (Exception ex)
                 {
-                    Log.e("Baglanti Hatasi", se.getMessage());
+
                 }
 
             }

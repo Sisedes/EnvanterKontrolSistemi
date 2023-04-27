@@ -18,6 +18,15 @@ public class MainActivity extends AppCompatActivity {
         btnurunler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Urunler.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView btnalislar = (TextView) findViewById(R.id.btn_alislar);
+        btnurunler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AlisEkle.class);
                 startActivity(intent);
             }
