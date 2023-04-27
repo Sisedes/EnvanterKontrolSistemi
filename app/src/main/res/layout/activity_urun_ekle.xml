@@ -65,7 +65,7 @@
         android:background="@drawable/bg_btn_1"
         android:text="Kaydet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintHorizontal_bias="0.856"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,15 +101,15 @@
 
     <EditText
         android:id="@+id/et_urunstok"
-        android:layout_width="159dp"
+        android:layout_width="169dp"
         android:layout_height="49dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/bg_tv2"
-        android:ems="10"
         android:drawableLeft="@drawable/icon_bos"
+        android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toEndOf="@+id/et_urunfiyat"
         app:layout_constraintTop_toBottomOf="@+id/et_urunid" />
 
@@ -123,7 +123,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_urunfiyat" />
 
@@ -131,7 +131,7 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
+        android:layout_marginStart="168dp"
         android:text="Stok"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_urunstok"

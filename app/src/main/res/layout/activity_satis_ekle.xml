@@ -87,7 +87,7 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="28dp"
         android:text="Müşteri ID"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_musteri_id"
