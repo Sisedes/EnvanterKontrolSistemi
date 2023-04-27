@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         TextView btnalislar = (TextView) findViewById(R.id.btn_alislar);
-        btnurunler.setOnClickListener(new View.OnClickListener() {
+        btnalislar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AlisEkle.class);
