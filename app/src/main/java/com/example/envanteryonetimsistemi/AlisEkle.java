@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AlisEkle extends AppCompatActivity {
-BaglantiYardimcisi baglantiYardimcisi=new BaglantiYardimcisi();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +51,8 @@ BaglantiYardimcisi baglantiYardimcisi=new BaglantiYardimcisi();
                             public void onResponse(String response) {
                                 if(response.equals("Basarili"))
                                 {
-                                    Toast.makeText(AlisEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT);
-                                }else Toast.makeText(AlisEkle.this, response,Toast.LENGTH_SHORT);
+                                    Toast.makeText(AlisEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(AlisEkle.this, response,Toast.LENGTH_SHORT).show();
 
                             }
                         }, new Response.ErrorListener() {
