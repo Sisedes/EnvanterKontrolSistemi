@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="410dp"
-    android:layout_height="127dp">
+    android:layout_height="105dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="117dp"
+        android:layout_height="100dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -26,7 +26,7 @@
                 android:id="@+id/textView25"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:background="#9DA8E6"
                 android:text="       "
                 app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
                 android:id="@+id/textView26"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_marginTop="68dp"
+                android:layout_marginTop="52dp"
                 android:background="#DDE0F1"
                 android:text="       "
                 app:layout_constraintEnd_toEndOf="parent"
@@ -48,13 +48,13 @@
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
+                android:layout_marginStart="36dp"
                 android:text="Depo ID : "
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_stok"
                 app:layout_constraintTop_toTopOf="@+id/textView26"
-                app:layout_constraintVertical_bias="0.137" />
+                app:layout_constraintVertical_bias="0.142" />
 
             <TextView
                 android:id="@+id/tv_urunid"
@@ -73,14 +73,14 @@
                 android:id="@+id/tv_urunadi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="24dp"
                 android:text="Ürün Adı"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_urunid"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.273" />
+                app:layout_constraintVertical_bias="0.269" />
 
             <TextView
                 android:id="@+id/tv_fiyat"
@@ -91,7 +91,7 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.258"
+                app:layout_constraintVertical_bias="0.276"
                 tools:layout_editor_absoluteX="261dp" />
 
             <ImageView
@@ -103,7 +103,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.257"
+                app:layout_constraintVertical_bias="0.25"
                 app:srcCompat="@drawable/img_tl" />
 
             <TextView
@@ -114,7 +114,7 @@
                 android:text="Stok : "
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="73dp" />
+                tools:layout_editor_absoluteY="57dp" />
 
             <TextView
                 android:id="@+id/tv_stok"
@@ -124,10 +124,10 @@
                 android:text="300"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textView26"
-                app:layout_constraintHorizontal_bias="0.082"
+                app:layout_constraintHorizontal_bias="0.045"
                 app:layout_constraintStart_toEndOf="@+id/textView27"
                 app:layout_constraintTop_toTopOf="@+id/textView26"
-                app:layout_constraintVertical_bias="0.16" />
+                app:layout_constraintVertical_bias="0.166" />
 
             <TextView
                 android:id="@+id/tv_depoid"
@@ -138,16 +138,6 @@
                 android:text="312"
                 app:layout_constraintStart_toEndOf="@+id/textView14"
                 app:layout_constraintTop_toTopOf="@+id/textView26" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="40dp"
-                app:layout_constraintEnd_toEndOf="@+id/textView26"
-                app:layout_constraintTop_toBottomOf="@+id/textView25"
-                app:srcCompat="@drawable/icon_sil" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

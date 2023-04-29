@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="410dp"
-    android:layout_height="110dp">
+    android:layout_height="65dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="409dp"
-        android:layout_height="90dp"
+        android:layout_height="60dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -25,7 +25,7 @@
                 android:id="@+id/textView25"
                 android:layout_width="88dp"
                 android:layout_height="31dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="12dp"
                 android:background="#DBA051"
                 android:text="       "
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,16 +82,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/textView26"
                 app:layout_constraintTop_toTopOf="@+id/tv_depoadi" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="40dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView26"
-                app:srcCompat="@drawable/icon_sil" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

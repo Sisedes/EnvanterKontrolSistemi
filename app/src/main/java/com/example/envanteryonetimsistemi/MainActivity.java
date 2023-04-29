@@ -27,7 +27,39 @@ public class MainActivity extends AppCompatActivity {
         btnalislar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AlisEkle.class);
+                Intent intent = new Intent(MainActivity.this, Alislar.class);
+                startActivity(intent);
+            }
+        });
+        TextView btndepolar = (TextView) findViewById(R.id.btn_depolar);
+        btndepolar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Depolar.class);
+                startActivity(intent);
+            }
+        });
+        TextView btnsatislar = (TextView) findViewById(R.id.btn_satislar);
+        btnsatislar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Satislar.class);
+                startActivity(intent);
+            }
+        });
+        TextView btnmusteriler = (TextView) findViewById(R.id.btn_musteriler);
+        btnmusteriler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Musteriler.class);
+                startActivity(intent);
+            }
+        });
+        TextView btntedarikciler = (TextView) findViewById(R.id.btn_tedarikciler);
+        btntedarikciler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Tedarikciler.class);
                 startActivity(intent);
             }
         });

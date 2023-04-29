@@ -3,43 +3,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#E5E9F1"
     android:layout_height="match_parent"
+    android:background="#E5E9F1"
     tools:context=".Urunler">
 
+
     <TextView
-        android:id="@+id/text_urunler"
+        android:id="@+id/text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="ÜRÜNLER"
+        android:text="URUNLER"
         android:textSize="25dp"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_urunekle"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="end"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/bg_btn_yuvarlak"
-        android:text="+"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
-        app:layout_constraintStart_toStartOf="parent"  />
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="10dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_urunler"
-        android:layout_width="match_parent"
-        android:layout_height="720dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="395dp"
+        android:layout_height="458dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_1" />
+
+    <Button
+        android:id="@+id/btn_urunekle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_tv"
+        android:text="EKLE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_urunler"
+        app:layout_constraintVertical_bias="0.304" />
+
+    <Button
+        android:id="@+id/btn_urunsil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_tv"
+        android:text="SİL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_urunekle"
+        app:layout_constraintTop_toBottomOf="@+id/rv_urunler"
+        app:layout_constraintVertical_bias="0.313" />
+
+    <Button
+        android:id="@+id/btn_urunguncelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_tv"
+        android:text="GÜNCELLE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_urunsil"
+        app:layout_constraintTop_toBottomOf="@+id/rv_urunler"
+        app:layout_constraintVertical_bias="0.313" />
 </androidx.constraintlayout.widget.ConstraintLayout>

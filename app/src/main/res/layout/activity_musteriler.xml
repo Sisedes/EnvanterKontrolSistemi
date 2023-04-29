@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#E5E9F1"
     android:layout_height="match_parent"
+    android:background="#E5E9F1"
     tools:context=".Musteriler">
 
+
     <TextView
-        android:id="@+id/text_musteriler"
+        android:id="@+id/text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="24dp"
         android:text="MÜŞTERİLER"
         android:textSize="25dp"
         android:textStyle="bold|italic"
@@ -19,27 +20,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_mutseriler"
+        android:layout_width="395dp"
+        android:layout_height="458dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_1" />
+
     <Button
         android:id="@+id/btn_musteriekle"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="end"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/bg_btn_yuvarlak"
-        android:text="+"
-        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_tv"
+        android:text="EKLE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_musterisil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_mutseriler"
+        app:layout_constraintVertical_bias="0.927" />
+
+    <Button
+        android:id="@+id/btn_musterisil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_tv"
+        android:text="SİL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_musteriguncelle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_musteriekle"
+        app:layout_constraintTop_toBottomOf="@+id/rv_mutseriler"
+        app:layout_constraintVertical_bias="0.928" />
+
+    <Button
+        android:id="@+id/btn_musteriguncelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_tv"
+        android:text="GÜNCELLE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="516dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_musteriler"
-        android:layout_width="match_parent"
-        android:layout_height="720dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_musteriler" />
+        app:layout_constraintStart_toEndOf="@+id/btn_musterisil"
+        app:layout_constraintTop_toBottomOf="@+id/rv_mutseriler"
+        app:layout_constraintVertical_bias="0.927" />
 </androidx.constraintlayout.widget.ConstraintLayout>

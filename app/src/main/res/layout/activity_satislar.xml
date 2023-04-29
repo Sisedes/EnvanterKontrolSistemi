@@ -3,44 +3,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#E5E9F1"
     android:layout_height="match_parent"
+    android:background="#E5E9F1"
     tools:context=".Satislar">
 
+
     <TextView
-        android:id="@+id/text_satislar"
+        android:id="@+id/text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="28dp"
         android:text="SATIŞLAR"
         android:textSize="25dp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_satisekle"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="end"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/bg_btn_yuvarlak"
-        android:text="+"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
-        app:layout_constraintStart_toStartOf="parent"  />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_satislar"
-        android:layout_width="match_parent"
-        android:layout_height="720dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="395dp"
+        android:layout_height="458dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_1" />
+
+    <Button
+        android:id="@+id/btn_satisekle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="57dp"
+        android:background="@drawable/bg_tv"
+        android:text="EKLE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_satislar"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <Button
+        android:id="@+id/btn_satissil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="57dp"
+        android:background="@drawable/bg_tv"
+        android:text="SİL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_satisekle"
+        app:layout_constraintTop_toBottomOf="@+id/rv_satislar" />
+
+    <Button
+        android:id="@+id/btn_satisguncelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/bg_tv"
+        android:text="GÜNCELLE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_satissil"
+        app:layout_constraintTop_toBottomOf="@+id/rv_satislar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="410dp"
-    android:layout_height="180dp">
+    android:layout_height="140dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="130dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -25,7 +25,7 @@
             <TextView
                 android:id="@+id/textView29"
                 android:layout_width="match_parent"
-                android:layout_height="47dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="16dp"
                 android:background="#B29EA6"
                 android:text="             "
@@ -38,23 +38,23 @@
                 android:id="@+id/tv_tedarikciadi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Tedarikçi Adı"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.471"
+                app:layout_constraintHorizontal_bias="0.468"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.14" />
+                app:layout_constraintVertical_bias="0.183" />
 
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:text="Adres : "
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/tv_email"
@@ -63,7 +63,7 @@
             <TextView
                 android:id="@+id/tv_adres"
                 android:layout_width="154dp"
-                android:layout_height="54dp"
+                android:layout_height="43dp"
                 android:layout_marginStart="26dp"
                 android:layout_marginEnd="52dp"
                 android:inputType="textMultiLine"
@@ -80,7 +80,7 @@
                 android:text="Tel :"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="81dp" />
+                tools:layout_editor_absoluteY="69dp" />
 
             <TextView
                 android:id="@+id/tv_tel"
@@ -89,14 +89,14 @@
                 android:layout_marginStart="8dp"
                 android:text="5052548563"
                 app:layout_constraintStart_toEndOf="@+id/textView7"
-                tools:layout_editor_absoluteY="81dp" />
+                tools:layout_editor_absoluteY="69dp" />
 
             <TextView
                 android:id="@+id/tv_tedarikciid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="24dp"
                 android:text="Tedarikçi ID"
                 android:textColor="@color/black"
 
@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="48dp"
                 android:text="E-mail : "
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -124,17 +124,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView22"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.801" />
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="36dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView29"
-                app:srcCompat="@drawable/icon_sil" />
+                app:layout_constraintVertical_bias="0.882" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
