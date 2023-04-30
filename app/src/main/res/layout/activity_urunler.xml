@@ -12,57 +12,131 @@
         android:id="@+id/text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="URUNLER"
         android:textSize="25dp"
         android:textStyle="bold|italic"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="10dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_urunler"
-        android:layout_width="395dp"
-        android:layout_height="458dp"
-        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_1" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollv_urunler"
+        android:layout_width="411dp"
+        android:layout_height="433dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_1">
+
+
+        <TableLayout
+            android:id="@+id/tableLayout_urunler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:background="@color/mavi"
+                    android:padding="8dp"
+                    android:text="   ÜRÜN ID"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:background="@color/mavi"
+                    android:padding="8dp"
+                    android:text="     İSİM"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:background="@color/mavi"
+                    android:padding="8dp"
+                    android:text="  FİYAT"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:background="@color/mavi"
+                    android:padding="8dp"
+                    android:text="  STOK"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/satir1_urun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_urunler_urunid"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_urunler_isim"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_urunler_fiyat"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/urunler_stok_tv"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/btn_urunekle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/bg_tv"
         android:text="EKLE"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_urunsil"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_urunler"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollv_urunler" />
 
     <Button
         android:id="@+id/btn_urunsil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/bg_tv"
         android:text="SİL"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_urunekle"
-        app:layout_constraintTop_toBottomOf="@+id/rv_urunler"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollv_urunler" />
 
     <Button
         android:id="@+id/btn_urunguncelle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/bg_tv"
         android:text="GÜNCELLE"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_urunsil"
-        app:layout_constraintTop_toBottomOf="@+id/rv_urunler"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollv_urunler" />
 </androidx.constraintlayout.widget.ConstraintLayout>
