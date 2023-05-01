@@ -21,5 +21,14 @@ public class Satislar extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnsatisguncelle = (Button) findViewById(R.id.btn_satisguncelle);
+        btnsatisguncelle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Satislar.this, SatisGuncelle.class);
+                startActivity(intent);
+            }
+        });
     }
 }

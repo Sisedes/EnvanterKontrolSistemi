@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E9F1"
-    tools:context=".UrunEkle">
+    tools:context=".UrunGuncelle">
     <TextView
         android:id="@+id/txt_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="ÜRÜN EKLE"
+        android:text="ÜRÜN GÜNCELLE"
         android:textSize="25dp"
         android:textColor="#4269AD"
         android:textStyle="bold|italic"
@@ -23,12 +23,12 @@
         android:id="@+id/et_urunid"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="104dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,12 +36,12 @@
         android:id="@+id/et_urunisim"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="188dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,12 +58,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_urunkaydet"
+        android:id="@+id/btn_urunguncelle"
         android:layout_width="146dp"
         android:layout_height="54dp"
         android:layout_marginTop="372dp"
         android:background="@drawable/bg_btn_1"
-        android:text="Kaydet"
+        android:text="Güncelle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.856"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +74,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="4dp"
         android:text="Ürün Adı"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_urunisim"
@@ -104,13 +103,13 @@
         android:id="@+id/et_urunstok"
         android:layout_width="169dp"
         android:layout_height="49dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="128dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toEndOf="@+id/et_urunfiyat"
         app:layout_constraintTop_toBottomOf="@+id/et_urunid" />
 

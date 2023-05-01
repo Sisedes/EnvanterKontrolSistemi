@@ -4,108 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F1F1"
+    android:background="#E5E9F1"
     tools:context=".Alislar">
 
     <TextView
-        android:id="@+id/text_alislar"
+        android:id="@+id/text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="ALIŞLAR"
+        android:textColor="#4269AD"
         android:textSize="25dp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:id="@+id/scrollv_alislar"
-        android:layout_width="416dp"
-        android:layout_height="404dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_alislar"
+        android:layout_width="395dp"
+        android:layout_height="458dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_alislar"
-        app:layout_constraintVertical_bias="0.151">
-
-
-        <TableLayout
-            android:id="@+id/tableLayout_alislar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:shrinkColumns="*"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text="   ALIŞ ID"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text="SATICI ID"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text="  ÜRÜN ID"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text="  ADET"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/satir1_alis"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_alislar_alisid"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_alislar_saticiid"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_alislar_urunid"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/tv_alislar_adet"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-        </TableLayout>
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/text_1" />
 
     <Button
         android:id="@+id/btn_alisekle"
@@ -118,7 +40,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_alissil"
         app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollv_alislar"
+        app:layout_constraintTop_toBottomOf="@+id/rv_alislar"
         app:layout_constraintVertical_bias="0.497" />
 
     <Button
@@ -131,7 +53,7 @@
         android:text="SİL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollv_alislar" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_alislar" />
 
     <Button
         android:id="@+id/btn_alisguncelle"
@@ -144,6 +66,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.325"
         app:layout_constraintStart_toEndOf="@+id/btn_alissil"
-        app:layout_constraintTop_toBottomOf="@+id/scrollv_alislar"
+        app:layout_constraintTop_toBottomOf="@+id/rv_alislar"
         app:layout_constraintVertical_bias="0.497" />
 </androidx.constraintlayout.widget.ConstraintLayout>

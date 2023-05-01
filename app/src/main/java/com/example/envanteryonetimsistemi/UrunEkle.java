@@ -3,8 +3,12 @@ package com.example.envanteryonetimsistemi;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +23,11 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UrunEkle extends AppCompatActivity {
+public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    //asagidaki dizi secilebilen depoid icin
+    //veritabanina yeni depo eklendiginde asagidaki depolar dizisine yeni deponun id'sinin eklenmesi lazim
+    public static final Integer[] depolar = {1,2,3,4};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +38,14 @@ public class UrunEkle extends AppCompatActivity {
         EditText et_urunfiyat = findViewById(R.id.et_urunfiyat);
         EditText et_urunstok = findViewById(R.id.et_urunstok);
         EditText et_urundepoid = findViewById(R.id.et_urundepoid);
-
         Button btn_urunkaydet = (Button) findViewById(R.id.btn_urunkaydet);
+
+        Spinner depoSpinner = findViewById(R.id.spinner_depo);
+
+
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, depolar);
+        depoSpinner.setAdapter(adapter);
+        depoSpinner.setOnItemSelectedListener(this);
 
         btn_urunkaydet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +91,23 @@ public class UrunEkle extends AppCompatActivity {
 
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
+
         });
+
+
     }
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String depoid = parent.getItemAtPosition(position).toString();
+        TextView tv = findViewById(R.id.tv_selecteddepoid);
+        //listeden secilen depo id'yi bu textviewe atadim, bu textviewi görünmez yapar texti veritabanina ekleriz
+        tv.setText(depoid);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+     //bos kalsin
+    }
+
+
 }

@@ -5,18 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E9F1"
-    tools:context=".MusteriEkle"
-    tools:ignore="MissingClass">
-
+    tools:context=".TedarikciGuncelle">
     <TextView
         android:id="@+id/txt_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="MÜŞTERİ EKLE"
+        android:layout_marginTop="16dp"
+        android:text="TEDARİKÇİ GÜNCELLE"
         android:textColor="#4269AD"
         android:textSize="25dp"
-
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -25,100 +22,101 @@
 
 
     <EditText
-        android:id="@+id/et_musteriad"
+        android:id="@+id/et_tedarikciad"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="156dp"
         android:background="@drawable/bg_tv2"
-        android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
+        android:drawableLeft="@drawable/icon_bos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_musteriid"
+        android:id="@+id/et_tedarikciid"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/bg_tv2"
+        android:layout_marginTop="80dp"
         android:drawableLeft="@drawable/icon_bos"
+        android:background="@drawable/bg_tv2"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_1" />
-
-    <EditText
-        android:id="@+id/et_musteritel"
-        android:layout_width="360dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="260dp"
-        android:background="@drawable/bg_tv2"
-        android:drawableLeft="@drawable/icon_bos"
-        android:ems="10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_musterieposta"
+        android:id="@+id/et_tedarikcitel"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="344dp"
+        android:layout_marginTop="240dp"
         android:background="@drawable/bg_tv2"
-        android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
+        android:drawableLeft="@drawable/icon_bos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_musteriadres"
+        android:id="@+id/et_tedarikci_eposta"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="424dp"
+        android:layout_marginTop="320dp"
+        android:background="@drawable/bg_tv2"
+        android:ems="10"
+        android:drawableLeft="@drawable/icon_bos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_tedarikciadres"
+        android:layout_width="355dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="404dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_musterikaydet"
-        android:layout_width="142dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="36dp"
+        android:id="@+id/btn_tedarikciguncelle"
+        android:layout_width="128dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="472dp"
         android:background="@drawable/bg_btn_1"
-        android:text="Kaydet"
+        android:text="Güncelle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_musteriadres" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="Müşteri ID"
+        android:text="Tedarikçi ID"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_musteriid"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikciid"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="Müşteri Ad-Soyad"
+        android:text="Tedarikçi Ad"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_musteriad"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikciad"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -128,7 +126,7 @@
         android:layout_marginStart="28dp"
         android:text="Telefon"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_musteritel"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikcitel"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -138,7 +136,7 @@
         android:layout_marginStart="28dp"
         android:text="E-posta"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_musterieposta"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikci_eposta"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -148,31 +146,32 @@
         android:layout_marginStart="28dp"
         android:text="Adres"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_musteriadres"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikciadres"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/et_sehir_kodu"
-        android:layout_width="155dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="512dp"
+        android:id="@+id/et_sehirkodu_tedarikci"
+        android:layout_width="173dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/btn_musterikaydet"
-        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintEnd_toStartOf="@+id/btn_tedarikciguncelle"
+        app:layout_constraintHorizontal_bias="0.394"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/et_tedarikciadres" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="Şehir kodu"
+        android:text="Şehir Kodu"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_sehir_kodu"
+        app:layout_constraintBottom_toTopOf="@+id/et_sehirkodu_tedarikci"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,5 +21,14 @@ public class Depolar extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btndepoguncelle= (Button) findViewById(R.id.btn_depoguncelle);
+        btndepoguncelle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Depolar.this, DepoGuncelle.class);
+                startActivity(intent);
+            }
+        });
     }
 }

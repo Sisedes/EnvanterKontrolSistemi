@@ -5,35 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E9F1"
-    tools:context=".MusteriEkle"
-    tools:ignore="MissingClass">
+    tools:context=".MusteriGuncelle">
+
 
     <TextView
         android:id="@+id/txt_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="MÜŞTERİ EKLE"
+        android:text="MÜŞTERİ GÜNCELLE"
         android:textColor="#4269AD"
         android:textSize="25dp"
 
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/et_musteriad"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="168dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,12 +40,12 @@
         android:id="@+id/et_musteriid"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.393"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_1" />
 
@@ -54,12 +53,12 @@
         android:id="@+id/et_musteritel"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="248dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,37 +66,36 @@
         android:id="@+id/et_musterieposta"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="344dp"
+        android:layout_marginTop="332dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_musteriadres"
-        android:layout_width="360dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="424dp"
+        android:layout_width="353dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="416dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_musterikaydet"
+        android:id="@+id/btn_musteriguncelle"
         android:layout_width="142dp"
         android:layout_height="49dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/bg_btn_1"
-        android:text="Kaydet"
+        android:text="Güncelle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.825"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_musteriadres" />
 
@@ -155,13 +153,13 @@
         android:id="@+id/et_sehir_kodu"
         android:layout_width="155dp"
         android:layout_height="52dp"
-        android:layout_marginTop="512dp"
+        android:layout_marginTop="504dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/btn_musterikaydet"
-        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintEnd_toStartOf="@+id/btn_musteriguncelle"
+        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

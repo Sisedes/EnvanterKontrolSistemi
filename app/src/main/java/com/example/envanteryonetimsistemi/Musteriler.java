@@ -21,5 +21,14 @@ public class Musteriler extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnmusteriguncelle = (Button) findViewById(R.id.btn_musteriguncelle);
+        btnmusteriguncelle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Musteriler.this, MusteriGuncelle.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -21,6 +21,14 @@ public class Alislar extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button btnalisguncelle= (Button) findViewById(R.id.btn_alisguncelle);
+        btnalisguncelle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Alislar.this, AlisGuncelle.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
