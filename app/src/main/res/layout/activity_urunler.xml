@@ -23,8 +23,8 @@
 
     <ScrollView
         android:id="@+id/scrollv_urunler"
-        android:layout_width="411dp"
-        android:layout_height="433dp"
+        android:layout_width="415dp"
+        android:layout_height="401dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
@@ -74,48 +74,19 @@
 
             </TableRow>
 
-            <TableRow
-                android:id="@+id/satir1_urun"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_urunler_urunid"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_urunler_isim"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_urunler_fiyat"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/urunler_stok_tv"
-                    android:padding="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
         </TableLayout>
     </ScrollView>
+
 
     <Button
         android:id="@+id/btn_urunekle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/bg_tv"
         android:text="EKLE"
         app:layout_constraintEnd_toStartOf="@+id/btn_urunsil"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollv_urunler" />
 
@@ -123,8 +94,8 @@
         android:id="@+id/btn_urunsil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/bg_tv"
         android:text="SİL"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,10 +105,42 @@
         android:id="@+id/btn_urunguncelle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/bg_tv"
         android:text="GÜNCELLE"
-        app:layout_constraintStart_toEndOf="@+id/btn_urunsil"
+        app:layout_constraintStart_toEndOf="@+id/btn_urunekle"
         app:layout_constraintTop_toBottomOf="@+id/scrollv_urunler" />
+
+    <EditText
+        android:id="@+id/et_urunler_idsil"
+        android:layout_width="88dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_tv2"
+        android:drawableLeft="@drawable/icon_bos"
+        android:ems="10"
+        android:hint="    ID"
+        android:inputType="text"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_urunekle" />
+
+    <Button
+        android:id="@+id/btn_urunid_sil"
+        android:layout_width="198dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bg_btn_2"
+        android:text="Yandaki ID'yi Sil"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintStart_toEndOf="@+id/et_urunler_idsil"
+        app:layout_constraintTop_toBottomOf="@+id/btn_urunsil" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

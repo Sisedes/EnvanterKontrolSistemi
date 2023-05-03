@@ -25,7 +25,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_satislar"
         android:layout_width="395dp"
-        android:layout_height="458dp"
+        android:layout_height="391dp"
         android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,28 +44,61 @@
         app:layout_constraintTop_toBottomOf="@+id/rv_satislar"
         app:layout_constraintVertical_bias="0.481" />
 
+
     <Button
         android:id="@+id/btn_satissil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="160dp"
         android:layout_marginBottom="57dp"
         android:background="@drawable/bg_tv"
         android:text="SİL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_satisekle"
-        app:layout_constraintTop_toBottomOf="@+id/rv_satislar" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_satislar"
+        app:layout_constraintVertical_bias="0.48" />
 
     <Button
         android:id="@+id/btn_satisguncelle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="40dp"
         android:layout_marginBottom="56dp"
         android:background="@drawable/bg_tv"
         android:text="GÜNCELLE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_satissil"
-        app:layout_constraintTop_toBottomOf="@+id/rv_satislar" />
+        app:layout_constraintStart_toEndOf="@+id/btn_satisekle"
+        app:layout_constraintTop_toBottomOf="@+id/rv_satislar"
+        app:layout_constraintVertical_bias="0.477" />
+
+    <EditText
+        android:id="@+id/et_satislar_idsil"
+        android:layout_width="88dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_tv2"
+        android:drawableLeft="@drawable/icon_bos"
+        android:ems="10"
+        android:hint="    ID"
+        android:inputType="text"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_satisekle" />
+
+    <Button
+        android:id="@+id/btn_satisid_sil"
+        android:layout_width="198dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="52dp"
+        android:background="@drawable/bg_btn_2"
+        android:text="Yandaki ID'yi Sil"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toEndOf="@+id/et_satislar_idsil"
+        app:layout_constraintTop_toBottomOf="@+id/btn_satissil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

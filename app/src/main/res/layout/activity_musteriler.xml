@@ -23,55 +23,82 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_mutseriler"
-        android:layout_width="395dp"
-        android:layout_height="458dp"
+        android:layout_width="398dp"
+        android:layout_height="385dp"
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_1" />
 
+
     <Button
         android:id="@+id/btn_musteriekle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="156dp"
         android:layout_marginBottom="56dp"
         android:background="@drawable/bg_tv"
         android:text="EKLE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_musterisil"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_mutseriler"
-        app:layout_constraintVertical_bias="0.927" />
+        app:layout_constraintVertical_bias="0.458" />
 
     <Button
         android:id="@+id/btn_musterisil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="36dp"
         android:layout_marginBottom="56dp"
         android:background="@drawable/bg_tv"
         android:text="SİL"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_musteriguncelle"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_musteriekle"
+        app:layout_constraintStart_toEndOf="@+id/btn_musteriguncelle"
         app:layout_constraintTop_toBottomOf="@+id/rv_mutseriler"
-        app:layout_constraintVertical_bias="0.928" />
+        app:layout_constraintVertical_bias="0.459" />
 
     <Button
         android:id="@+id/btn_musteriguncelle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="160dp"
         android:layout_marginBottom="56dp"
         android:background="@drawable/bg_tv"
         android:text="GÜNCELLE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_musterisil"
         app:layout_constraintTop_toBottomOf="@+id/rv_mutseriler"
-        app:layout_constraintVertical_bias="0.927" />
+        app:layout_constraintVertical_bias="0.458" />
+
+    <EditText
+        android:id="@+id/et_musteriler_idsil"
+        android:layout_width="88dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/bg_tv2"
+        android:drawableLeft="@drawable/icon_bos"
+        android:ems="10"
+        android:hint="    ID"
+        android:inputType="text"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_musteriekle" />
+
+    <Button
+        android:id="@+id/btn_musteriid_sil"
+        android:layout_width="198dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/bg_btn_2"
+        android:text="Yandaki ID'yi Sil"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/et_musteriler_idsil"
+        app:layout_constraintTop_toBottomOf="@+id/btn_musterisil" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

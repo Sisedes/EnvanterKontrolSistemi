@@ -23,49 +23,81 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_tedarikciler"
-        android:layout_width="395dp"
-        android:layout_height="458dp"
+        android:layout_width="396dp"
+        android:layout_height="370dp"
         android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_1" />
 
+
     <Button
         android:id="@+id/btn_tedarikciekle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="40dp"
         android:layout_marginBottom="57dp"
         android:background="@drawable/bg_tv"
         android:text="EKLE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_tedarikciler"
-        app:layout_constraintVertical_bias="0.496" />
+        app:layout_constraintVertical_bias="0.495" />
 
     <Button
         android:id="@+id/btn_tedarikcisil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="152dp"
         android:layout_marginBottom="57dp"
         android:background="@drawable/bg_tv"
         android:text="SİL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_tedarikciekle"
         app:layout_constraintTop_toBottomOf="@+id/rv_tedarikciler"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintVertical_bias="0.493" />
 
     <Button
         android:id="@+id/btn_tedarikciguncelle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginBottom="57dp"
         android:background="@drawable/bg_tv"
         android:text="GÜNCELLE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_tedarikcisil"
+        app:layout_constraintStart_toEndOf="@+id/btn_tedarikciekle"
         app:layout_constraintTop_toBottomOf="@+id/rv_tedarikciler"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintVertical_bias="0.493" />
+
+    <EditText
+        android:id="@+id/et_tedarikciler_idsil"
+        android:layout_width="88dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_tv2"
+        android:drawableLeft="@drawable/icon_bos"
+        android:ems="10"
+        android:hint="    ID"
+        android:inputType="text"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_tedarikciekle" />
+
+    <Button
+        android:id="@+id/btn_tedarikciid_sil"
+        android:layout_width="198dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bg_btn_2"
+        android:text="Yandaki ID'yi Sil"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.711"
+        app:layout_constraintStart_toEndOf="@+id/et_tedarikciler_idsil"
+        app:layout_constraintTop_toBottomOf="@+id/btn_tedarikcisil" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
