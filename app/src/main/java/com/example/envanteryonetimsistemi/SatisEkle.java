@@ -1,5 +1,7 @@
 package com.example.envanteryonetimsistemi;
 
+import static com.example.envanteryonetimsistemi.IPAdresi.ip;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -45,7 +47,7 @@ public class SatisEkle extends AppCompatActivity {
 
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://192.168.1.43/satis_ekle.php";
+                String url ="http://"+ip+"/satis_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
