@@ -28,7 +28,7 @@ public class MusteriEkle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musteri_ekle);
 
-        EditText etmusteri_id = findViewById(R.id.et_musteriid);
+
         EditText etmusteriad = findViewById(R.id.et_musteriad);
         EditText etmusteritel = findViewById(R.id.et_musteritel);
         EditText etmusterieposta = findViewById(R.id.et_musterieposta);
@@ -40,7 +40,7 @@ public class MusteriEkle extends AppCompatActivity {
         btnmusterikaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String etmusteri_id_text = etmusteri_id.getText().toString();
+
                 String etmusteriad_text = etmusteriad.getText().toString();
                 String etmusteritel_Text = etmusteritel.getText().toString();
                 String etmusterieposta_text = etmusterieposta.getText().toString();
@@ -68,7 +68,6 @@ public class MusteriEkle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("musteri_id", etmusteri_id_text);
                         paramV.put("musteri_ad", etmusteriad_text);
                         paramV.put("telefon_no", etmusteritel_Text);
                         paramV.put("e_posta", etmusterieposta_text);

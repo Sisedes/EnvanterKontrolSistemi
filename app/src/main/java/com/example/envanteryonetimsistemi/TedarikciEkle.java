@@ -28,7 +28,7 @@ public class TedarikciEkle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tedarikci_ekle);
 
-        EditText et_tedarikciid = findViewById(R.id.et_tedarikciid);
+
         EditText et_tedarikciad = findViewById(R.id.et_tedarikciad);
         EditText et_tedarikcitel = findViewById(R.id.et_tedarikcitel);
         EditText et_tedarikci_eposta = findViewById(R.id.et_tedarikci_eposta);
@@ -40,7 +40,7 @@ public class TedarikciEkle extends AppCompatActivity {
         btn_tedarikcikaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String et_tedarikciid_text = et_tedarikciid.getText().toString();
+
                 String et_tedarikciad_text = et_tedarikciad.getText().toString();
                 String et_tedarikcitel_Text = et_tedarikcitel.getText().toString();
                 String et_tedarikci_eposta_text = et_tedarikci_eposta.getText().toString();
@@ -69,7 +69,7 @@ public class TedarikciEkle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("satici_id", et_tedarikciid_text);
+
                         paramV.put("satici_ad", et_tedarikciad_text);
                         paramV.put("telefon_no", et_tedarikcitel_Text);
                         paramV.put("e_posta", et_tedarikci_eposta_text);

@@ -28,7 +28,7 @@ public class SatisEkle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_satis_ekle);
 
-        EditText et_satıs_id = findViewById(R.id.et_satıs_id);
+
         EditText et_musteri_id = findViewById(R.id.et_musteri_id);
         EditText et_urun_id = findViewById(R.id.et_urun_id);
         EditText et_adet = findViewById(R.id.et_adet);
@@ -39,7 +39,7 @@ public class SatisEkle extends AppCompatActivity {
         btn_satiskaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String et_satıs_id_text = et_satıs_id.getText().toString();
+
                 String et_musteri_id_text = et_musteri_id.getText().toString();
                 String et_urun_id_Text = et_urun_id.getText().toString();
                 String et_adet_text = et_adet.getText().toString();
@@ -67,7 +67,7 @@ public class SatisEkle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("satis_id", et_satıs_id_text);
+
                         paramV.put("musteri_id", et_musteri_id_text);
                         paramV.put("urun_id", et_urun_id_Text);
                         paramV.put("alis_sekli", et_alissekli_text);

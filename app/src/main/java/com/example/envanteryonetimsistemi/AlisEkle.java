@@ -28,7 +28,6 @@ public class AlisEkle extends AppCompatActivity {
         setContentView(R.layout.activity_alis_ekle);
 
 
-        EditText etalis_id = findViewById(R.id.et_alis_id);
         EditText ettedarikci_id = findViewById(R.id.et_tedarikci_id);
         EditText eturun_id = findViewById(R.id.et_urun_id);
         EditText etadet = findViewById(R.id.et_adet);
@@ -39,7 +38,7 @@ public class AlisEkle extends AppCompatActivity {
         btnaliskaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String etalis_text = etalis_id.getText().toString();
+
                 String ettedarikci_text = ettedarikci_id.getText().toString();
                 String eturun_Text = eturun_id.getText().toString();
                 String etadet_text = etadet.getText().toString();
@@ -65,7 +64,6 @@ public class AlisEkle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("alis_id", etalis_text);
                         paramV.put("satici_id", ettedarikci_text);
                         paramV.put("urun_id", eturun_Text);
                         paramV.put("urun_adet", etadet_text);
