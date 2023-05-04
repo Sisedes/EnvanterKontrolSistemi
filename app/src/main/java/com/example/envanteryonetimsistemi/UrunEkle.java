@@ -22,6 +22,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +34,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
 
     //asagidaki dizi secilebilen depoid icin
     //veritabanina yeni depo eklendiginde asagidaki depolar dizisine yeni deponun id'sinin eklenmesi lazim
-    public static final Integer[] depolar = {1,2,3,4};
+    ArrayList<String> depolar = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +50,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
         Spinner depoSpinner = findViewById(R.id.spinner_depo);
 
 
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, depolar);
-        depoSpinner.setAdapter(adapter);
-        depoSpinner.setOnItemSelectedListener(this);
-
+//region urunekle
         btn_urunkaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,8 +97,43 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
             }
 
         });
+//endregion
 
+        //region dropdowna veriçekme
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        String url ="http://"+ip+"/phpKodlari/dropdown_depo_id.php";
 
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try{
+                            JSONArray jarray=new JSONArray(response);
+                            for(int i=0; i<jarray.length(); i++)
+                            {
+                                JSONObject jobject=jarray.getJSONObject(i);
+                                String hehe=jobject.getString("depo_id");
+                                depolar.add(hehe);
+                            }
+                        }
+                        catch (JSONException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Hata", error.getLocalizedMessage());
+            }
+        })
+        ;
+        queue.add(stringRequest);
+        //endregion
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, depolar);
+        depoSpinner.setAdapter(adapter);
+        depoSpinner.setOnItemSelectedListener(this);
     }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

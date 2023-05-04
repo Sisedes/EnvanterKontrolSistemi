@@ -17,9 +17,9 @@ public class UrunGuncelle extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_urun_guncelle);
         //buradaki depolar dizisini UrunEkle sinifindan cektim, UrunEkle sinifindaki dizinin guncellenmesi yeterli
         Spinner depoSpinner = findViewById(R.id.spinner_depo);
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, UrunEkle.depolar);
-        depoSpinner.setAdapter(adapter);
-        depoSpinner.setOnItemSelectedListener(this);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, UrunGuncelle.depolar);
+        //depoSpinner.setAdapter(adapter);
+        //depoSpinner.setOnItemSelectedListener(this);
 
     }
 

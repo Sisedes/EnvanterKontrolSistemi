@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_tedarikci_id"
+        android:id="@+id/et_tedarikci_id_u"
         android:layout_width="360dp"
         android:layout_height="49dp"
         android:layout_marginTop="36dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_alis_id" />
 
     <EditText
-        android:id="@+id/et_alis_id"
+        android:id="@+id/et_alis_id_u"
         android:layout_width="360dp"
         android:layout_height="49dp"
         android:layout_marginTop="108dp"
@@ -48,7 +48,7 @@
 
 
     <EditText
-        android:id="@+id/et_urun_id"
+        android:id="@+id/et_urun_id_u"
         android:layout_width="360dp"
         android:layout_height="49dp"
         android:layout_marginTop="276dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_adet"
+        android:id="@+id/et_adet_u"
         android:layout_width="173dp"
         android:layout_height="50dp"
         android:layout_marginStart="28dp"
@@ -90,7 +90,7 @@
         android:layout_marginStart="24dp"
         android:text="Tedarikçi ID"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_tedarikci_id"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikci_id_u"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -100,7 +100,7 @@
         android:layout_marginStart="32dp"
         android:text="Alış ID"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_alis_id"
+        app:layout_constraintBottom_toTopOf="@+id/et_alis_id_u"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -110,7 +110,7 @@
         android:layout_marginStart="28dp"
         android:text="Urun ID"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_urun_id"
+        app:layout_constraintBottom_toTopOf="@+id/et_urun_id_u"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -120,6 +120,6 @@
         android:layout_marginStart="32dp"
         android:text="Adet"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_adet"
+        app:layout_constraintBottom_toTopOf="@+id/et_adet_u"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
