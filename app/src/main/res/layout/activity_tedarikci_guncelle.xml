@@ -22,7 +22,7 @@
 
 
     <EditText
-        android:id="@+id/et_tedarikciad"
+        android:id="@+id/et_tedarikciadE"
         android:layout_width="360dp"
         android:layout_height="49dp"
         android:layout_marginTop="156dp"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_tedarikciid"
+        android:id="@+id/et_tedarikciidE"
         android:layout_width="360dp"
         android:layout_height="49dp"
         android:layout_marginTop="80dp"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_tedarikcitel"
+        android:id="@+id/et_tedarikcitelE"
         android:layout_width="360dp"
         android:layout_height="49dp"
         android:layout_marginTop="240dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_tedarikci_eposta"
+        android:id="@+id/et_tedarikci_epostaE"
         android:layout_width="360dp"
         android:layout_height="49dp"
         android:layout_marginTop="320dp"
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_tedarikciadres"
+        android:id="@+id/et_tedarikciadresE"
         android:layout_width="355dp"
         android:layout_height="49dp"
         android:layout_marginTop="404dp"
@@ -87,7 +87,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_tedarikciguncelle"
+        android:id="@+id/btn_tedarikciguncelleE"
         android:layout_width="128dp"
         android:layout_height="55dp"
         android:layout_marginTop="472dp"
@@ -105,7 +105,7 @@
         android:layout_marginStart="28dp"
         android:text="Tedarikçi ID"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_tedarikciid"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikciidE"
         app:layout_constraintStart_toStartOf="parent" />
 
 
@@ -116,7 +116,7 @@
         android:layout_marginStart="28dp"
         android:text="Tedarikçi Ad"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_tedarikciad"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikciadE"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -126,7 +126,7 @@
         android:layout_marginStart="28dp"
         android:text="Telefon"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_tedarikcitel"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikcitelE"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -136,7 +136,7 @@
         android:layout_marginStart="28dp"
         android:text="E-posta"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_tedarikci_eposta"
+        app:layout_constraintBottom_toTopOf="@+id/et_tedarikci_epostaE"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -150,7 +150,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/et_sehirkodu_tedarikci"
+        android:id="@+id/et_sehirkodu_tedarikciE"
         android:layout_width="173dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
@@ -158,10 +158,10 @@
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/btn_tedarikciguncelle"
+        app:layout_constraintEnd_toStartOf="@+id/btn_tedarikciguncelleE"
         app:layout_constraintHorizontal_bias="0.394"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_tedarikciadres" />
+        app:layout_constraintTop_toBottomOf="@+id/et_tedarikciadresE" />
 
     <TextView
         android:id="@+id/textView31"
@@ -170,7 +170,7 @@
         android:layout_marginStart="28dp"
         android:text="Şehir Kodu"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_sehirkodu_tedarikci"
+        app:layout_constraintBottom_toTopOf="@+id/et_sehirkodu_tedarikciE"
         app:layout_constraintStart_toStartOf="parent" />
 
 

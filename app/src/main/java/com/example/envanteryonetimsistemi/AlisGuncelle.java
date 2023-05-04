@@ -77,7 +77,5 @@ public class AlisGuncelle extends AppCompatActivity {
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
-
-
     }
 }

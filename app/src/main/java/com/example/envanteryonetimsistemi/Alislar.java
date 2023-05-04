@@ -109,7 +109,6 @@ public class Alislar extends AppCompatActivity {
 //endregion
 
         //region yazdırma
-        TableLayout tableLayout=findViewById(R.id.tableLayout_alislar);
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         String url ="http://"+ip+"/phpKodlari/alislar.php";
 
@@ -141,9 +140,6 @@ public class Alislar extends AppCompatActivity {
                                 row.addView(textView2);
                                 row.addView(textView3);
                                 row.addView(textView4);
-
-                                tableLayout.addView(row);
-
                             }
                         }
                         catch (JSONException e)
