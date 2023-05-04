@@ -48,7 +48,7 @@ public class MusteriEkle extends AppCompatActivity {
                 String etsehir_kodu_Text = etsehir_kodu.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/musteri_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/musteri_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

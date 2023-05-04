@@ -61,7 +61,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
 
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/urun_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/urun_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

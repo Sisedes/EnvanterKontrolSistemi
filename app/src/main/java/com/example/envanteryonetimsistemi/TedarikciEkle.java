@@ -49,7 +49,7 @@ public class TedarikciEkle extends AppCompatActivity {
 
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/satici_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/satici_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

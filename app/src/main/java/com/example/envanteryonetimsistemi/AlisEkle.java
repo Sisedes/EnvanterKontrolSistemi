@@ -45,7 +45,7 @@ public class AlisEkle extends AppCompatActivity {
                 String etadet_text = etadet.getText().toString();
                 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/alis_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/alis_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

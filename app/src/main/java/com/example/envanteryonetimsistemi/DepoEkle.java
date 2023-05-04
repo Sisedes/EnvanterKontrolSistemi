@@ -42,7 +42,7 @@ public class DepoEkle extends AppCompatActivity {
                 String etsehirkodu_Text = etsehirkodu.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/depo_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/depo_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

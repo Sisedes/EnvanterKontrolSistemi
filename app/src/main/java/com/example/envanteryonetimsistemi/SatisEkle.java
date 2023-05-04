@@ -47,7 +47,7 @@ public class SatisEkle extends AppCompatActivity {
 
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/satis_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/satis_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
