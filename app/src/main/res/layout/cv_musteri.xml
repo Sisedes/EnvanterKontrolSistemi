@@ -35,30 +35,27 @@
 
             <TextView
                 android:id="@+id/tv_musteriid"
-                android:layout_width="88dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="5dp"
+                android:layout_width="72dp"
+                android:layout_height="23dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="29dp"
                 android:paddingStart="11dp"
-                android:text="Müşteri ID"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@+id/tv_musteriadi"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView36"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_musteriadi"
-                android:layout_width="210dp"
-                android:layout_height="23dp"
+                android:layout_width="231dp"
+                android:layout_height="25dp"
                 android:layout_marginTop="28dp"
-                android:text="Müşteri Adı"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.623"
+                app:layout_constraintHorizontal_bias="0.769"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,10 +73,9 @@
 
             <TextView
                 android:id="@+id/tv_adres"
-                android:layout_width="154dp"
-                android:layout_height="32dp"
+                android:layout_width="156dp"
+                android:layout_height="33dp"
                 android:layout_marginTop="2dp"
-                android:text="adres jdkjsdkljls"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.84"
                 app:layout_constraintStart_toStartOf="parent"
@@ -98,11 +94,10 @@
 
             <TextView
                 android:id="@+id/tv_tel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="125dp"
+                android:layout_height="17dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
-                android:text="5052548563"
                 app:layout_constraintStart_toEndOf="@+id/textView7"
                 app:layout_constraintTop_toBottomOf="@+id/tv_musteriid" />
 
@@ -119,13 +114,23 @@
 
             <TextView
                 android:id="@+id/tv_mail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="127dp"
+                android:layout_height="18dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
-                android:text="mail.gmail.com"
                 app:layout_constraintStart_toEndOf="@+id/textView24"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tel" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:text="ID: "
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView29"
+                app:layout_constraintTop_toTopOf="@+id/textView29" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

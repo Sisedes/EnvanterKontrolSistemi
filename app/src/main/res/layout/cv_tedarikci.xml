@@ -36,24 +36,23 @@
 
             <TextView
                 android:id="@+id/tv_tedarikciadi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="222dp"
+                android:layout_height="23dp"
                 android:layout_marginTop="5dp"
-                android:text="Tedarikçi Adı"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.468"
+                app:layout_constraintHorizontal_bias="0.78"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.183" />
+                app:layout_constraintVertical_bias="0.186" />
 
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="28dp"
                 android:layout_marginTop="16dp"
                 android:text="Adres : "
                 android:textStyle="bold"
@@ -66,8 +65,6 @@
                 android:layout_height="43dp"
                 android:layout_marginStart="26dp"
                 android:layout_marginEnd="52dp"
-                android:inputType="textMultiLine"
-                android:text="adres jdkjsdkljl  hhhhhhhhhhhhhhmjdklskpşs"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_email"
                 app:layout_constraintTop_toBottomOf="@+id/textView27" />
@@ -85,25 +82,23 @@
 
             <TextView
                 android:id="@+id/tv_tel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="109dp"
+                android:layout_height="17dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
-                android:text="5052548563"
                 app:layout_constraintStart_toEndOf="@+id/textView7"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tedarikciadi" />
 
             <TextView
                 android:id="@+id/tv_tedarikciid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="47dp"
+                android:layout_height="22dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
-                android:text="Tedarikçi ID"
-                android:textColor="@color/black"
 
+                android:textColor="@color/black"
                 android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView41"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -119,14 +114,24 @@
 
             <TextView
                 android:id="@+id/tv_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="95dp"
+                android:layout_height="18dp"
                 android:layout_marginStart="4dp"
-                android:text="mail@gmail.com"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView22"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.855" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="ID: "
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView29"
+                app:layout_constraintTop_toTopOf="@+id/textView29" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

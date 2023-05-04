@@ -19,14 +19,14 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp">
+            android:layout_width="392dp"
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView25"
-                android:layout_width="89dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="46dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="16dp"
                 android:background="#B66B6B"
                 android:text="       "
                 app:layout_constraintStart_toStartOf="parent"
@@ -34,50 +34,80 @@
 
             <TextView
                 android:id="@+id/tv_alisid"
-                android:layout_width="86dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
-                android:paddingStart="15dp"
-                android:text="Alış ID"
+                android:layout_width="38dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="20dp"
+                android:paddingStart="10dp"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_urunid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Ürün ID"
+                android:layout_width="47dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="20dp"
                 android:textColor="@color/black"
-                android:textSize="16dp"
+                android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.302"
+                app:layout_constraintHorizontal_bias="0.307"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_tedarikciid"
+                android:layout_width="35dp"
+                android:layout_height="15dp"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView33"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.422" />
+
+            <TextView
+                android:id="@+id/tv_adet"
+                android:layout_width="35dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/textView34"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:text="Tedarikçi ID"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="19dp"
+                android:text="Urun ID: "
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tv_urunid"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView25"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Tedarikci ID: "
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/tv_urunid"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_adet"
-                android:layout_width="55dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="28dp"
-                android:text="Adet"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Adet:"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/tv_tedarikciid"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.529" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

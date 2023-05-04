@@ -20,62 +20,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:id="@+id/sv_alislar"
-        android:layout_width="421dp"
-        android:layout_height="380dp"
-        android:layout_marginTop="20dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_alislar"
+        android:layout_width="384dp"
+        android:layout_height="402dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_1">
+        app:layout_constraintTop_toBottomOf="@+id/text_1" />
 
-
-        <TableLayout
-            android:id="@+id/tableLayout_alislar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:shrinkColumns="*"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:id="@+id/roww"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text="   ALIŞ ID"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text=" SATICI İD"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text=" ÜRÜN ID"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text=" ADET"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-        </TableLayout>
-    </ScrollView>
 
     <Button
         android:id="@+id/btn_alisekle"
@@ -88,8 +41,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_alissil"
         app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sv_alislar"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_alislar" />
 
     <Button
         android:id="@+id/btn_alissil"
@@ -102,8 +54,7 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sv_alislar"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_alislar" />
 
     <Button
         android:id="@+id/btn_alisguncelle"
@@ -115,8 +66,7 @@
         android:text="GÜNCELLE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_alissil"
-        app:layout_constraintTop_toBottomOf="@+id/sv_alislar"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_alislar" />
 
     <EditText
         android:id="@+id/et_alilsar_idsil"

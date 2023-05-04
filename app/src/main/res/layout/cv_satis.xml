@@ -23,7 +23,7 @@
 
             <TextView
                 android:id="@+id/textView25"
-                android:layout_width="89dp"
+                android:layout_width="54dp"
                 android:layout_height="32dp"
                 android:layout_marginTop="16dp"
                 android:background="#719B7E"
@@ -33,11 +33,10 @@
 
             <TextView
                 android:id="@+id/tv_satisid"
-                android:layout_width="86dp"
-                android:layout_height="24dp"
+                android:layout_width="50dp"
+                android:layout_height="21dp"
                 android:layout_marginTop="5dp"
                 android:paddingStart="15dp"
-                android:text="Satış ID"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,24 +44,21 @@
 
             <TextView
                 android:id="@+id/tv_urunid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_width="35dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
-                android:text="Ürün ID"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                app:layout_constraintStart_toEndOf="@+id/tv_satisid"
+                android:textSize="12dp"
+                app:layout_constraintStart_toEndOf="@+id/textView37"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_musteriid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
-                android:text="Müşteri ID"
-                android:textStyle="bold"
+                android:layout_width="46dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="20dp"
+                android:textSize="12dp"
                 app:layout_constraintStart_toEndOf="@+id/tv_urunid"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,9 +66,40 @@
                 android:id="@+id/tv_adet"
                 android:layout_width="53dp"
                 android:layout_height="18dp"
-                android:layout_marginStart="36dp"
-                android:layout_marginTop="24dp"
-                android:text="Adet"
+                android:layout_marginTop="20dp"
+                android:textSize="12dp"
+                app:layout_constraintStart_toEndOf="@+id/textView39"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:text="Ürün ID:"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView25"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:text="Müşteri ID:"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tv_urunid"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="37dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Adet:"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/tv_musteriid"
                 app:layout_constraintTop_toTopOf="parent" />

@@ -23,8 +23,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_depolar"
-        android:layout_width="414dp"
-        android:layout_height="397dp"
+        android:layout_width="398dp"
+        android:layout_height="395dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -21,96 +21,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:id="@+id/scrollv_urunler"
-        android:layout_width="415dp"
-        android:layout_height="401dp"
-        android:layout_marginTop="20dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_urunler"
+        android:layout_width="414dp"
+        android:layout_height="397dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_1">
-
-
-        <TableLayout
-            android:id="@+id/tableLayout_urunler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:shrinkColumns="*"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text="   ÜRÜN ID"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text="     İSİM"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text="  FİYAT"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:background="@color/mavi"
-                    android:padding="8dp"
-                    android:text="  STOK"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-        </TableLayout>
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/text_1" />
 
 
     <Button
         android:id="@+id/btn_urunekle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/bg_tv"
         android:text="EKLE"
         app:layout_constraintEnd_toStartOf="@+id/btn_urunsil"
-        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollv_urunler" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_urunler" />
 
     <Button
         android:id="@+id/btn_urunsil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="280dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/bg_tv"
         android:text="SİL"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollv_urunler" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_urunler" />
 
     <Button
         android:id="@+id/btn_urunguncelle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/bg_tv"
         android:text="GÜNCELLE"
         app:layout_constraintStart_toEndOf="@+id/btn_urunekle"
-        app:layout_constraintTop_toBottomOf="@+id/scrollv_urunler" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_urunler" />
 
     <EditText
         android:id="@+id/et_urunler_idsil"
