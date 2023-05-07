@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_satıs_id"
+        android:id="@+id/et_satis_id"
         android:layout_width="360dp"
         android:layout_height="49dp"
         android:layout_marginTop="112dp"
@@ -101,7 +101,7 @@
         android:layout_marginBottom="4dp"
         android:text="Satış ID"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_satıs_id"
+        app:layout_constraintBottom_toTopOf="@+id/et_satis_id"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

@@ -35,7 +35,6 @@ public class TedarikciGuncelle extends AppCompatActivity {
         EditText et_tedarikci_adres = findViewById(R.id.et_tedarikciadresE);
         EditText et_tedarikci_sehir = findViewById(R.id.et_sehirkodu_tedarikciE);
 
-
         //region lindosh
         Button btntedarikguncelle = (Button) findViewById(R.id.btn_tedarikciguncelleE); //güncelleme butonu
 
@@ -50,7 +49,7 @@ public class TedarikciGuncelle extends AppCompatActivity {
                 String sehirID = et_tedarikci_sehir.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/phpKodlari/alis_update.php";
+                String url ="http://"+ip+"/phpKodlari/satici_update.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

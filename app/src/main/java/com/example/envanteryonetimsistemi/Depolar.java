@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,6 +29,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Depolar extends AppCompatActivity {
 
@@ -64,44 +67,44 @@ public class Depolar extends AppCompatActivity {
                 btndepoidsil.setVisibility(View.VISIBLE);
             }
         });
-        RecyclerView rv_depolar=findViewById(R.id.rv_depolar);
-        //region yazdırma
 
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url ="http://"+ip+"/phpKodlari/depolar.php";
+        //region silme işlemi
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try{
-                            ArrayList<String> gelenler=new ArrayList<String>();
-                            JSONArray jarray=new JSONArray(response);
-                            for(int i=0; i<jarray.length(); i++)
-                            {
+        btndepoidsil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id=et_depoid.getText().toString();
 
-                                JSONObject jobject=jarray.getJSONObject(i);
-                                String depo_id=jobject.getString("depo_id");
-                                String isim=jobject.getString("isim");
-                                String sehir_id=jobject.getString("sehir_id");
+                RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+                String url ="http://"+ip+"/phpKodlari/depo_sil.php";
 
-                                gelenler.add(depo_id+" "+isim+" "+sehir_id);
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                if(response.equals("Basarili"))
+                                {
+                                    Toast.makeText(Depolar.this ,"Basariyla Silindi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(Depolar.this, response,Toast.LENGTH_SHORT).show();
 
                             }
-                        }
-                        catch (JSONException e)
-                        {
-                            e.printStackTrace();
-                        }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Hata", error.getLocalizedMessage());
                     }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Hata", error.getLocalizedMessage());
+                }){
+                    protected Map<String, String> getParams(){
+                        Map<String, String> paramV = new HashMap<>();
+                        paramV.put("depo_id", id);
+                        return paramV;
+                    }
+                };
+                queue.add(stringRequest);
+
+                //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
-        queue.add(stringRequest);
-
-        //endregion
+//endregion
     }
 }

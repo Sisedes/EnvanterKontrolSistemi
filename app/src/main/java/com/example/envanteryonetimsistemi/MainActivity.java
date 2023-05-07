@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.envanteryonetimsistemi.AlisBilgi.Alislar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
