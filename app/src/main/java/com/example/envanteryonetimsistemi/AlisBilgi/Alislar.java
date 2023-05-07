@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.AlisBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -6,17 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ScrollView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,17 +20,26 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.envanteryonetimsistemi.DepoBilgi.Depolar;
+import com.example.envanteryonetimsistemi.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Alislar extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
+public class Alislar extends AppCompatActivity {
+//region retrofit ile ekrana yazdırmak için gerekli parametreler
+    private AlisApi alisApi;
+    private ArrayList<Alis> alisArrayList;
+    private AlisAdapter alisAdapter;
+    private String BaseUrl="http://"+ip+"/phpKodlari/";
+    private RecyclerView rv;
+// endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +66,9 @@ public class Alislar extends AppCompatActivity {
 
         //!!id ile silme islemini yapacak buton :
         Button btnalisidsil= (Button) findViewById(R.id.btn_alisid_sil);
+
+
+
         btnalissil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +76,7 @@ public class Alislar extends AppCompatActivity {
                 btnalisidsil.setVisibility(View.VISIBLE);
             }
         });
+
 //region silme işlemi
         Button alisidsil=findViewById(R.id.btn_alisid_sil);
         EditText et_alilsar_idsil = findViewById(R.id.et_alilsar_idsil);
@@ -109,51 +118,41 @@ public class Alislar extends AppCompatActivity {
 //endregion
 
         //region yazdırma
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url ="http://"+ip+"/phpKodlari/alislar.php";
+        rv=findViewById(R.id.rv_alislar);
+        alisArrayList=new ArrayList<>();
+        viewJsonData();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try{
-                            JSONArray jarray=new JSONArray(response);
-                            for(int i=0; i<jarray.length(); i++)
-                            {
-                                TableRow row = new TableRow(getApplicationContext());
-                                JSONObject jobject=jarray.getJSONObject(i);
-                                String alis_id=jobject.getString("alis_id");
-                                String satici_id=jobject.getString("satici_id");
-                                String urun_id=jobject.getString("urun_id");
-                                String urun_adet=jobject.getString("urun_adet");
+        //endregion
 
-                                TextView textView1 = new TextView(getApplicationContext());
-                                textView1.setText(alis_id);
-                                TextView textView2 = new TextView(getApplicationContext());
-                                textView2.setText(satici_id);
-                                TextView textView3 = new TextView(getApplicationContext());
-                                textView3.setText(urun_id);
-                                TextView textView4 = new TextView(getApplicationContext());
-                                textView4.setText(urun_adet);
+    }
 
-                                row.addView(textView1);
-                                row.addView(textView2);
-                                row.addView(textView3);
-                                row.addView(textView4);
-                            }
-                        }
-                        catch (JSONException e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
+    //region yazdırmak için gerekli metot
+    private void viewJsonData() {
+        Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        alisApi=retrofit.create((AlisApi.class));
+        Call<ArrayList<Alis>> alarraylist=alisApi.callArraylist();
+        alarraylist.enqueue(new Callback<ArrayList<Alis>>() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Hata", error.getLocalizedMessage());
+            public void onResponse(Call<ArrayList<Alis>> call, retrofit2.Response<ArrayList<Alis>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    alisArrayList = response.body();
+                    int i = 0;
+                    for (i = 0; i < alisArrayList.size(); i++) {
+                        alisAdapter = new AlisAdapter(alisArrayList, Alislar.this);
+                        LinearLayoutManager manager = new LinearLayoutManager(Alislar.this, RecyclerView.VERTICAL, false);
+                        rv.setLayoutManager(manager);
+                        rv.setAdapter(alisAdapter);
+                    }
+                }else{Toast.makeText(Alislar.this, "Alış Listesi Boş", Toast.LENGTH_SHORT).show();}
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Alis>> call, Throwable t) {
+                Toast.makeText(Alislar.this, "Veriler getirilemedi.Hata: "  + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        queue.add(stringRequest);
-        //endregion
     }
+    //endregion
 }

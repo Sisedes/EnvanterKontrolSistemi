@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E9F1"
-    tools:context=".Alislar">
+    tools:context=".AlisBilgi.Alislar">
 
     <TextView
         android:id="@+id/text_1"
@@ -22,8 +22,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_alislar"
-        android:layout_width="384dp"
-        android:layout_height="402dp"
+        android:layout_width="392dp"
+        android:layout_height="362dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

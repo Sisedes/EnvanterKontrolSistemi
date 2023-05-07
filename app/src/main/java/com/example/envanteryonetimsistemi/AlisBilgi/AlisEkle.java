@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.AlisBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -17,32 +17,35 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class DepoEkle extends AppCompatActivity {
-
+public class AlisEkle extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_depo_ekle);
+        setContentView(R.layout.activity_alis_ekle);
 
-        EditText etdepo_id = findViewById(R.id.et_depo_id);
-        EditText etdepo_isim = findViewById(R.id.et_depo_isim);
-        EditText etsehirkodu = findViewById(R.id.et_sehirkodu);
 
-        Button btndepokaydet = (Button) findViewById(R.id.btn_depokaydet);
+        EditText ettedarikci_id = findViewById(R.id.et_tedarikci_id);
+        EditText eturun_id = findViewById(R.id.et_urun_id);
+        EditText etadet = findViewById(R.id.et_adet);
+        
 
-        btndepokaydet.setOnClickListener(new View.OnClickListener() {
+        Button btnaliskaydet = (Button) findViewById(R.id.btn_aliskaydet);
+
+        btnaliskaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String etdepo_text = etdepo_id.getText().toString();
-                String etdepoisim_text = etdepo_isim.getText().toString();
-                String etsehirkodu_Text = etsehirkodu.getText().toString();
 
+                String ettedarikci_text = ettedarikci_id.getText().toString();
+                String eturun_Text = eturun_id.getText().toString();
+                String etadet_text = etadet.getText().toString();
+                
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/phpKodlari/depo_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/alis_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -50,8 +53,8 @@ public class DepoEkle extends AppCompatActivity {
                             public void onResponse(String response) {
                                 if(response.equals("Basarili"))
                                 {
-                                    Toast.makeText(DepoEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
-                                }else Toast.makeText(DepoEkle.this, response,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(AlisEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(AlisEkle.this, response,Toast.LENGTH_SHORT).show();
 
                             }
                         }, new Response.ErrorListener() {
@@ -62,9 +65,9 @@ public class DepoEkle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("depo_id", etdepo_text);
-                        paramV.put("isim", etdepoisim_text);
-                        paramV.put("sehir_id", etsehirkodu_Text);
+                        paramV.put("satici_id", ettedarikci_text);
+                        paramV.put("urun_id", eturun_Text);
+                        paramV.put("urun_adet", etadet_text);
                         return paramV;
                     }
                 };
@@ -73,5 +76,8 @@ public class DepoEkle extends AppCompatActivity {
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
+
     }
+
+
 }

@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.DepoBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -17,39 +17,33 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class TedarikciEkle extends AppCompatActivity {
+public class DepoEkle extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tedarikci_ekle);
+        setContentView(R.layout.activity_depo_ekle);
 
+        EditText etdepo_id = findViewById(R.id.et_depo_id);
+        EditText etdepo_isim = findViewById(R.id.et_depo_isim);
+        EditText etsehirkodu = findViewById(R.id.et_sehirkodu);
 
-        EditText et_tedarikciad = findViewById(R.id.et_tedarikciad);
-        EditText et_tedarikcitel = findViewById(R.id.et_tedarikcitel);
-        EditText et_tedarikci_eposta = findViewById(R.id.et_tedarikci_eposta);
-        EditText et_tedarikciadres = findViewById(R.id.et_tedarikciadres);
-        EditText et_sehirkodu_tedarikci = findViewById(R.id.et_sehirkodu_tedarikci);
+        Button btndepokaydet = (Button) findViewById(R.id.btn_depokaydet);
 
-        Button btn_tedarikcikaydet = (Button) findViewById(R.id.btn_tedarikcikaydet);
-
-        btn_tedarikcikaydet.setOnClickListener(new View.OnClickListener() {
+        btndepokaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String et_tedarikciad_text = et_tedarikciad.getText().toString();
-                String et_tedarikcitel_Text = et_tedarikcitel.getText().toString();
-                String et_tedarikci_eposta_text = et_tedarikci_eposta.getText().toString();
-                String et_tedarikciadres_text = et_tedarikciadres.getText().toString();
-                String et_sehirkodu_tedarikci_text = et_sehirkodu_tedarikci.getText().toString();
-
+                String etdepo_text = etdepo_id.getText().toString();
+                String etdepoisim_text = etdepo_isim.getText().toString();
+                String etsehirkodu_Text = etsehirkodu.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/phpKodlari/satici_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/depo_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -57,8 +51,8 @@ public class TedarikciEkle extends AppCompatActivity {
                             public void onResponse(String response) {
                                 if(response.equals("Basarili"))
                                 {
-                                    Toast.makeText(TedarikciEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
-                                }else Toast.makeText(TedarikciEkle.this, response,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(DepoEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(DepoEkle.this, response,Toast.LENGTH_SHORT).show();
 
                             }
                         }, new Response.ErrorListener() {
@@ -69,12 +63,9 @@ public class TedarikciEkle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-
-                        paramV.put("satici_ad", et_tedarikciad_text);
-                        paramV.put("telefon_no", et_tedarikcitel_Text);
-                        paramV.put("e_posta", et_tedarikci_eposta_text);
-                        paramV.put("adres", et_tedarikciadres_text);
-                        paramV.put("sehir_id", et_sehirkodu_tedarikci_text);
+                        paramV.put("depo_id", etdepo_text);
+                        paramV.put("isim", etdepoisim_text);
+                        paramV.put("sehir_id", etsehirkodu_Text);
                         return paramV;
                     }
                 };

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="#E5E9F1"
     android:layout_height="match_parent"
-    tools:context=".AlisEkle">
+    tools:context=".AlisBilgi.AlisEkle">
     <TextView
         android:id="@+id/txt_aliseklee"
         android:layout_width="wrap_content"

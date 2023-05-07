@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E9F1"
-    tools:context=".Depolar">
+    tools:context=".DepoBilgi.Depolar">
 
     <TextView
         android:id="@+id/text_1"

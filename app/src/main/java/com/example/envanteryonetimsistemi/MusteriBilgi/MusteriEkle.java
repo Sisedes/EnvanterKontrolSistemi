@@ -1,10 +1,7 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.MusteriBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,40 +9,47 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class AlisGuncelle extends AppCompatActivity {
+public class MusteriEkle extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_musteri_ekle);
 
-        setContentView(R.layout.activity_alis_guncelle);
-        EditText et_alis_id_u = findViewById(R.id.et_alis_id_u);
-        EditText et_tedarikci_id_u = findViewById(R.id.et_tedarikci_id_u);
-        EditText et_urun_id_u = findViewById(R.id.et_urun_id_u);
-        EditText et_adet_u = findViewById(R.id.et_adet_u);
 
-        Button btnalisguncelle = (Button) findViewById(R.id.btn_alisguncelle); //güncelleme butonu
+        EditText etmusteriad = findViewById(R.id.et_musteriad);
+        EditText etmusteritel = findViewById(R.id.et_musteritel);
+        EditText etmusterieposta = findViewById(R.id.et_musterieposta);
+        EditText etmusteriadres = findViewById(R.id.et_musteriadres);
+        EditText etsehir_kodu = findViewById(R.id.et_sehir_kodu);
 
-        btnalisguncelle.setOnClickListener(new View.OnClickListener() {
+        Button btnmusterikaydet = (Button) findViewById(R.id.btn_musterikaydet);
+
+        btnmusterikaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String et_alis_id_u_text = et_alis_id_u.getText().toString();
-                String et_tedarikci_id_u_text = et_tedarikci_id_u.getText().toString();
-                String et_urun_id_u_Text = et_urun_id_u.getText().toString();
-                String et_adet_u_text = et_adet_u.getText().toString();
+
+                String etmusteriad_text = etmusteriad.getText().toString();
+                String etmusteritel_Text = etmusteritel.getText().toString();
+                String etmusterieposta_text = etmusterieposta.getText().toString();
+                String etmusteriadres_text = etmusteriadres.getText().toString();
+                String etsehir_kodu_Text = etsehir_kodu.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/phpKodlari/alis_update.php";
+                String url ="http://"+ip+"/phpKodlari/musteri_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -53,8 +57,8 @@ public class AlisGuncelle extends AppCompatActivity {
                             public void onResponse(String response) {
                                 if(response.equals("Basarili"))
                                 {
-                                    Toast.makeText(AlisGuncelle.this ,"Basariyla Güncellendi",Toast.LENGTH_SHORT).show();
-                                }else Toast.makeText(AlisGuncelle.this, response,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MusteriEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(MusteriEkle.this, response,Toast.LENGTH_SHORT).show();
 
                             }
                         }, new Response.ErrorListener() {
@@ -65,10 +69,11 @@ public class AlisGuncelle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("alis_id", et_alis_id_u_text);
-                        paramV.put("satici_id", et_tedarikci_id_u_text);
-                        paramV.put("urun_id", et_urun_id_u_Text);
-                        paramV.put("urun_adet", et_adet_u_text);
+                        paramV.put("musteri_ad", etmusteriad_text);
+                        paramV.put("telefon_no", etmusteritel_Text);
+                        paramV.put("e_posta", etmusterieposta_text);
+                        paramV.put("adres", etmusteriadres_text);
+                        paramV.put("sehir_id", etsehir_kodu_Text);
                         return paramV;
                     }
                 };

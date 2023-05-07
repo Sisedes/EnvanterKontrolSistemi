@@ -1,6 +1,8 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.AlisBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,42 +11,41 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class AlisEkle extends AppCompatActivity {
+public class AlisGuncelle extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alis_ekle);
 
+        setContentView(R.layout.activity_alis_guncelle);
+        EditText et_alis_id_u = findViewById(R.id.et_alis_id_u);
+        EditText et_tedarikci_id_u = findViewById(R.id.et_tedarikci_id_u);
+        EditText et_urun_id_u = findViewById(R.id.et_urun_id_u);
+        EditText et_adet_u = findViewById(R.id.et_adet_u);
 
-        EditText ettedarikci_id = findViewById(R.id.et_tedarikci_id);
-        EditText eturun_id = findViewById(R.id.et_urun_id);
-        EditText etadet = findViewById(R.id.et_adet);
-        
+        Button btnalisguncelle = (Button) findViewById(R.id.btn_alisguncelle); //güncelleme butonu
 
-        Button btnaliskaydet = (Button) findViewById(R.id.btn_aliskaydet);
-
-        btnaliskaydet.setOnClickListener(new View.OnClickListener() {
+        btnalisguncelle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String et_alis_id_u_text = et_alis_id_u.getText().toString();
+                String et_tedarikci_id_u_text = et_tedarikci_id_u.getText().toString();
+                String et_urun_id_u_Text = et_urun_id_u.getText().toString();
+                String et_adet_u_text = et_adet_u.getText().toString();
 
-                String ettedarikci_text = ettedarikci_id.getText().toString();
-                String eturun_Text = eturun_id.getText().toString();
-                String etadet_text = etadet.getText().toString();
-                
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/phpKodlari/alis_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/alis_update.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -52,8 +53,8 @@ public class AlisEkle extends AppCompatActivity {
                             public void onResponse(String response) {
                                 if(response.equals("Basarili"))
                                 {
-                                    Toast.makeText(AlisEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
-                                }else Toast.makeText(AlisEkle.this, response,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(AlisGuncelle.this ,"Basariyla Güncellendi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(AlisGuncelle.this, response,Toast.LENGTH_SHORT).show();
 
                             }
                         }, new Response.ErrorListener() {
@@ -64,9 +65,10 @@ public class AlisEkle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("satici_id", ettedarikci_text);
-                        paramV.put("urun_id", eturun_Text);
-                        paramV.put("urun_adet", etadet_text);
+                        paramV.put("alis_id", et_alis_id_u_text);
+                        paramV.put("satici_id", et_tedarikci_id_u_text);
+                        paramV.put("urun_id", et_urun_id_u_Text);
+                        paramV.put("urun_adet", et_adet_u_text);
                         return paramV;
                     }
                 };
@@ -75,8 +77,5 @@ public class AlisEkle extends AppCompatActivity {
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
-
     }
-
-
 }
