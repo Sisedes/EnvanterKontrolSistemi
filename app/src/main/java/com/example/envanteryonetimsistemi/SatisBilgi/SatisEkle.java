@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.SatisBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -17,38 +17,38 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MusteriEkle extends AppCompatActivity {
+public class SatisEkle extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_musteri_ekle);
+        setContentView(R.layout.activity_satis_ekle);
 
 
-        EditText etmusteriad = findViewById(R.id.et_musteriad);
-        EditText etmusteritel = findViewById(R.id.et_musteritel);
-        EditText etmusterieposta = findViewById(R.id.et_musterieposta);
-        EditText etmusteriadres = findViewById(R.id.et_musteriadres);
-        EditText etsehir_kodu = findViewById(R.id.et_sehir_kodu);
+        EditText et_musteri_id = findViewById(R.id.et_musteri_id);
+        EditText et_urun_id = findViewById(R.id.et_urun_id);
+        EditText et_adet = findViewById(R.id.et_adet);
+        EditText et_alissekli = findViewById(R.id.et_alissekli);
 
-        Button btnmusterikaydet = (Button) findViewById(R.id.btn_musterikaydet);
+        Button btn_satiskaydet = (Button) findViewById(R.id.btn_satiskaydet);
 
-        btnmusterikaydet.setOnClickListener(new View.OnClickListener() {
+        btn_satiskaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String etmusteriad_text = etmusteriad.getText().toString();
-                String etmusteritel_Text = etmusteritel.getText().toString();
-                String etmusterieposta_text = etmusterieposta.getText().toString();
-                String etmusteriadres_text = etmusteriadres.getText().toString();
-                String etsehir_kodu_Text = etsehir_kodu.getText().toString();
+                String et_musteri_id_text = et_musteri_id.getText().toString();
+                String et_urun_id_Text = et_urun_id.getText().toString();
+                String et_adet_text = et_adet.getText().toString();
+                String et_alissekli_text = et_alissekli.getText().toString();
+
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/phpKodlari/musteri_ekle.php";
+                String url ="http://"+ip+"/phpKodlari/satis_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -56,8 +56,8 @@ public class MusteriEkle extends AppCompatActivity {
                             public void onResponse(String response) {
                                 if(response.equals("Basarili"))
                                 {
-                                    Toast.makeText(MusteriEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
-                                }else Toast.makeText(MusteriEkle.this, response,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SatisEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(SatisEkle.this, response,Toast.LENGTH_SHORT).show();
 
                             }
                         }, new Response.ErrorListener() {
@@ -68,11 +68,11 @@ public class MusteriEkle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("musteri_ad", etmusteriad_text);
-                        paramV.put("telefon_no", etmusteritel_Text);
-                        paramV.put("e_posta", etmusterieposta_text);
-                        paramV.put("adres", etmusteriadres_text);
-                        paramV.put("sehir_id", etsehir_kodu_Text);
+
+                        paramV.put("musteri_id", et_musteri_id_text);
+                        paramV.put("urun_id", et_urun_id_Text);
+                        paramV.put("alis_sekli", et_alissekli_text);
+                        paramV.put("urun_adet", et_adet_text);
                         return paramV;
                     }
                 };

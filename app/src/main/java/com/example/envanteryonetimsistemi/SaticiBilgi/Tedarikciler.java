@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.SaticiBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,12 +20,29 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.R;
+import com.example.envanteryonetimsistemi.SatisBilgi.Satis;
+import com.example.envanteryonetimsistemi.SatisBilgi.SatisAdapter;
+import com.example.envanteryonetimsistemi.SatisBilgi.SatisApi;
+import com.example.envanteryonetimsistemi.SatisBilgi.Satislar;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Tedarikciler extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
+public class Tedarikciler extends AppCompatActivity {
+    //region retrofit ile ekrana yazdırmak için gerekli parametreler
+    private SaticiApi saticiApi;
+    private ArrayList<Satici> saticiArrayList;
+    private SaticiAdapter saticiAdapter;
+    private String BaseUrl="http://"+ip+"/phpKodlari/";
+    private RecyclerView rv;
+    // endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +116,42 @@ public class Tedarikciler extends AppCompatActivity {
             }
         });
 //endregion
+
+        //region yazdırma
+        rv=findViewById(R.id.rv_tedarikciler);
+        saticiArrayList=new ArrayList<>();
+        viewJsonData();
+
+        //endregion
     }
 
+    //region yazdırmak için gerekli metot
+    private void viewJsonData() {
+        Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        saticiApi=retrofit.create((SaticiApi.class));
+        Call<ArrayList<Satici>> sslarraylist=saticiApi.callArraylist();
+        sslarraylist.enqueue(new Callback<ArrayList<Satici>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Satici>> call, retrofit2.Response<ArrayList<Satici>> response) {
+                if (response.isSuccessful() && response.body() != null){
+                    saticiArrayList = response.body();
+
+                    int i = 0;
+                    for (i = 0; i < saticiArrayList.size(); i++) {
+                        saticiAdapter = new SaticiAdapter(saticiArrayList, Tedarikciler.this);
+                        LinearLayoutManager manager = new LinearLayoutManager(Tedarikciler.this, RecyclerView.VERTICAL, false);
+                        rv.setLayoutManager(manager);
+                        rv.setAdapter(saticiAdapter);
+                    }
+                }else{Toast.makeText(Tedarikciler.this, "Satış Listesi Boş", Toast.LENGTH_SHORT).show();}
+            }
+            @Override
+            public void onFailure(Call<ArrayList<Satici>> call, Throwable t) {
+                Toast.makeText(Tedarikciler.this, "Veriler getirilemedi.Hata: "  + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    //endregion
 }

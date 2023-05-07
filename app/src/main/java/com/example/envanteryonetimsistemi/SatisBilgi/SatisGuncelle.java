@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.SatisBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -17,39 +17,39 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MusteriGuncelle extends AppCompatActivity {
+public class SatisGuncelle extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_musteri_guncelle);
+        setContentView(R.layout.activity_satis_guncelle);
 
-        EditText et_musteri_id = findViewById(R.id.et_musteriid);
-        EditText et_musteri_ad = findViewById(R.id.et_musteriad);
-        EditText et_musteri_tel = findViewById(R.id.et_musteritel);
-        EditText et_musteri_eposta = findViewById(R.id.et_musterieposta);
-        EditText et_musteri_adres = findViewById(R.id.et_musteriadres);
-        EditText et_musteri_sehir = findViewById(R.id.et_sehir_kodu);
+        EditText et_satisid = findViewById(R.id.et_satis_id);
+        EditText et_musteriid = findViewById(R.id.et_musteri_id);
+        EditText et_urunid = findViewById(R.id.et_urun_id);
+        EditText et_adet_ = findViewById(R.id.et_adet);
+        EditText et_alissekli_ = findViewById(R.id.et_alissekli);
 
         //region lindosh
-        Button btnmusteriguncelle = (Button) findViewById(R.id.btn_musteriguncelle); //güncelleme butonu
+        Button btnsatisguncelle = (Button) findViewById(R.id.btn_satisguncelle); //güncelleme butonu
 
-        btnmusteriguncelle.setOnClickListener(new View.OnClickListener() {
+        btnsatisguncelle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id = et_musteri_id.getText().toString();
-                String ad = et_musteri_ad.getText().toString();
-                String  tel= et_musteri_tel.getText().toString();
-                String eposta = et_musteri_eposta.getText().toString();
-                String adres = et_musteri_adres.getText().toString();
-                String sehirID = et_musteri_sehir.getText().toString();
+                String satisid = et_satisid.getText().toString();
+                String musteriid = et_musteriid.getText().toString();
+                String urunid= et_urunid.getText().toString();
+                String adet = et_adet_.getText().toString();
+                String  alissekli= et_alissekli_.getText().toString();
+
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/phpKodlari/musteri_update.php";
+                String url ="http://"+ip+"/phpKodlari/satis_update.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -57,8 +57,8 @@ public class MusteriGuncelle extends AppCompatActivity {
                             public void onResponse(String response) {
                                 if(response.equals("Basarili"))
                                 {
-                                    Toast.makeText(MusteriGuncelle.this ,"Basariyla Güncellendi",Toast.LENGTH_SHORT).show();
-                                }else Toast.makeText(MusteriGuncelle.this, response,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SatisGuncelle.this ,"Basariyla Güncellendi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(SatisGuncelle.this, response,Toast.LENGTH_SHORT).show();
                             }
                         }, new Response.ErrorListener() {
                     @Override
@@ -68,12 +68,13 @@ public class MusteriGuncelle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("musteri_id", id);
-                        paramV.put("musteri_ad", ad);
-                        paramV.put("telefon_no", tel);
-                        paramV.put("e_posta", eposta);
-                        paramV.put("adres", adres);
-                        paramV.put("sehir_id", sehirID);
+                        paramV.put("satis_id", satisid);
+                        paramV.put("musteri_id", musteriid);
+                        paramV.put("urun_id", urunid);
+                        paramV.put("alis_sekli", alissekli);
+                        paramV.put("urun_adet", adet);
+
+
                         return paramV;
                     }
                 };

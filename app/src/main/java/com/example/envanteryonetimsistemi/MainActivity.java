@@ -8,6 +8,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.envanteryonetimsistemi.AlisBilgi.Alislar;
+import com.example.envanteryonetimsistemi.DepoBilgi.Depolar;
+import com.example.envanteryonetimsistemi.MusteriBilgi.Musteriler;
+import com.example.envanteryonetimsistemi.SaticiBilgi.Tedarikciler;
+import com.example.envanteryonetimsistemi.SatisBilgi.Satislar;
+import com.example.envanteryonetimsistemi.UrunBilgi.Urunler;
 
 public class MainActivity extends AppCompatActivity {
 

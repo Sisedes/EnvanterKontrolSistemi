@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.DepoBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -8,9 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,17 +20,26 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.envanteryonetimsistemi.MusteriBilgi.Musteriler;
+import com.example.envanteryonetimsistemi.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Depolar extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
+public class Depolar extends AppCompatActivity {
+    //region retrofit ile ekrana yazdırmak için gerekli parametreler
+    private DepoApi depoApi;
+    private ArrayList<Depo> depoArrayList;
+    private DepoAdapter depoAdapter;
+    private String BaseUrl="http://"+ip+"/phpKodlari/";
+    private RecyclerView rv;
+    // endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,5 +112,43 @@ public class Depolar extends AppCompatActivity {
             }
         });
 //endregion
+
+        //region yazdırma
+        rv=findViewById(R.id.rv_depolar);
+        depoArrayList=new ArrayList<>();
+        viewJsonData();
+
+        //endregion
+
     }
+
+    //region yazdırmak için gerekli metot
+    private void viewJsonData() {
+        Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        depoApi=retrofit.create((DepoApi.class));
+        Call<ArrayList<Depo>> dlarraylist=depoApi.callArraylist();
+        dlarraylist.enqueue(new Callback<ArrayList<Depo>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Depo>> call, retrofit2.Response<ArrayList<Depo>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    depoArrayList = response.body();
+                    int i = 0;
+                    for (i = 0; i < depoArrayList.size(); i++) {
+                        depoAdapter = new DepoAdapter(depoArrayList, Depolar.this);
+                        LinearLayoutManager manager = new LinearLayoutManager(Depolar.this, RecyclerView.VERTICAL, false);
+                        rv.setLayoutManager(manager);
+                        rv.setAdapter(depoAdapter);
+                    }
+                }else{Toast.makeText(Depolar.this, "Depo Listesi Boş", Toast.LENGTH_SHORT).show();}
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Depo>> call, Throwable t) {
+                Toast.makeText(Depolar.this, "Veriler getirilemedi.Hata: "  + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    //endregion
 }

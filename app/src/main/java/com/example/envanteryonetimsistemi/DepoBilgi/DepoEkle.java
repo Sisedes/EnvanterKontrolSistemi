@@ -1,8 +1,6 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.DepoBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -11,41 +9,41 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class DepoGuncelle extends AppCompatActivity {
+public class DepoEkle extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_depo_guncelle);
+        setContentView(R.layout.activity_depo_ekle);
 
+        EditText etdepo_id = findViewById(R.id.et_depo_id);
+        EditText etdepo_isim = findViewById(R.id.et_depo_isim);
+        EditText etsehirkodu = findViewById(R.id.et_sehirkodu);
 
-        EditText et_depo_id = findViewById(R.id.et_depo_id);
-        EditText et_depo_isim = findViewById(R.id.et_depo_isim);
-        EditText et_depo_sehirKod = findViewById(R.id.et_sehirkodu);
+        Button btndepokaydet = (Button) findViewById(R.id.btn_depokaydet);
 
-        //region lindosh
-        Button btndepoguncelle = (Button) findViewById(R.id.btn_depoguncelle); //güncelleme butonu
-
-        btndepoguncelle.setOnClickListener(new View.OnClickListener() {
+        btndepokaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id = et_depo_id.getText().toString();
-                String isim = et_depo_isim.getText().toString();
-                String  sehirKod= et_depo_sehirKod.getText().toString();
-
+                String etdepo_text = etdepo_id.getText().toString();
+                String etdepoisim_text = etdepo_isim.getText().toString();
+                String etsehirkodu_Text = etsehirkodu.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/phpKodlari/depo_update.php";
+                String url ="http://"+ip+"/phpKodlari/depo_ekle.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -53,8 +51,9 @@ public class DepoGuncelle extends AppCompatActivity {
                             public void onResponse(String response) {
                                 if(response.equals("Basarili"))
                                 {
-                                    Toast.makeText(DepoGuncelle.this ,"Basariyla Güncellendi",Toast.LENGTH_SHORT).show();
-                                }else Toast.makeText(DepoGuncelle.this, response,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(DepoEkle.this ,"Basariyla Eklendi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(DepoEkle.this, response,Toast.LENGTH_SHORT).show();
+
                             }
                         }, new Response.ErrorListener() {
                     @Override
@@ -64,16 +63,15 @@ public class DepoGuncelle extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("depo_id", id);
-                        paramV.put("isim", isim);
-                        paramV.put("sehir_id", sehirKod);
-
+                        paramV.put("depo_id", etdepo_text);
+                        paramV.put("isim", etdepoisim_text);
+                        paramV.put("sehir_id", etsehirkodu_Text);
                         return paramV;
                     }
                 };
                 queue.add(stringRequest);
-                //endregion
 
+                //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
     }

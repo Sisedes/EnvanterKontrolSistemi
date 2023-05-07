@@ -18,88 +18,88 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".UrunGuncelle"
+            android:name=".UrunBilgi.UrunGuncelle"
             android:exported="false" />
         <activity
-            android:name=".TedarikciGuncelle"
+            android:name=".SaticiBilgi.TedarikciGuncelle"
             android:exported="false" />
         <activity
-            android:name=".SatisGuncelle"
+            android:name=".SatisBilgi.SatisGuncelle"
             android:exported="false" />
         <activity
-            android:name=".MusteriGuncelle"
+            android:name=".MusteriBilgi.MusteriGuncelle"
             android:exported="false" />
         <activity
-            android:name=".DepoGuncelle"
+            android:name=".DepoBilgi.DepoGuncelle"
             android:exported="false" />
         <activity
             android:name=".AlisBilgi.AlisGuncelle"
             android:exported="false" />
         <activity
-            android:name=".UrunEkle"
+            android:name=".UrunBilgi.UrunEkle"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Urunler"
+            android:name=".UrunBilgi.Urunler"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".TedarikciEkle"
+            android:name=".SaticiBilgi.TedarikciEkle"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Tedarikciler"
+            android:name=".SaticiBilgi.Tedarikciler"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SatisEkle"
+            android:name=".SatisBilgi.SatisEkle"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Satislar"
+            android:name=".SatisBilgi.Satislar"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MusteriEkle"
+            android:name=".MusteriBilgi.MusteriEkle"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Musteriler"
+            android:name=".MusteriBilgi.Musteriler"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".DepoEkle"
+            android:name=".DepoBilgi.DepoEkle"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Depolar"
+            android:name=".DepoBilgi.Depolar"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

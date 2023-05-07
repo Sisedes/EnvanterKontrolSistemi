@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi.AlisBilgi;
+package com.example.envanteryonetimsistemi.UrunBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -20,8 +20,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.envanteryonetimsistemi.DepoBilgi.Depolar;
 import com.example.envanteryonetimsistemi.R;
+import com.example.envanteryonetimsistemi.SatisBilgi.Satis;
+import com.example.envanteryonetimsistemi.SatisBilgi.SatisAdapter;
+import com.example.envanteryonetimsistemi.SatisBilgi.SatisApi;
+import com.example.envanteryonetimsistemi.SatisBilgi.Satislar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,61 +35,57 @@ import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Alislar extends AppCompatActivity {
-//region retrofit ile ekrana yazdırmak için gerekli parametreler
-    private AlisApi alisApi;
-    private ArrayList<Alis> alisArrayList;
-    private AlisAdapter alisAdapter;
+public class Urunler extends AppCompatActivity {
+    //region retrofit ile ekrana yazdırmak için gerekli parametreler
+    private UrunApi urunApi;
+    private ArrayList<Urun> urunArrayList;
+    private UrunAdapter urunAdapter;
     private String BaseUrl="http://"+ip+"/phpKodlari/";
     private RecyclerView rv;
-// endregion
+    // endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alislar);
-        Button btnalisekle = (Button) findViewById(R.id.btn_alisekle);
-        btnalisekle.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_urunler);
+
+        Button btnurunekle = (Button) findViewById(R.id.btn_urunekle);
+        btnurunekle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Alislar.this, AlisEkle.class);
-                startActivity(intent);
-            }
-        });
-        Button btnalisguncelle= (Button) findViewById(R.id.btn_alisguncelle);
-        btnalisguncelle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Alislar.this, AlisGuncelle.class);
+                Intent intent = new Intent(Urunler.this, UrunEkle.class);
                 startActivity(intent);
             }
         });
 
-        Button btnalissil= (Button) findViewById(R.id.btn_alissil);
-        EditText et_alisid=(EditText) findViewById(R.id.et_alilsar_idsil);
+        Button btnurunguncelle = (Button) findViewById(R.id.btn_urunguncelle);
+        btnurunguncelle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Urunler.this, UrunGuncelle.class);
+                startActivity(intent);
+            }
+        });
 
+        Button btnurunsil= (Button) findViewById(R.id.btn_urunsil);
+        EditText et_urunid=(EditText) findViewById(R.id.et_urunler_idsil) ;
         //!!id ile silme islemini yapacak buton :
-        Button btnalisidsil= (Button) findViewById(R.id.btn_alisid_sil);
-
-
-
-        btnalissil.setOnClickListener(new View.OnClickListener() {
+        Button btnurunidsil= (Button) findViewById(R.id.btn_urunid_sil);
+        btnurunsil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                et_alisid.setVisibility(View.VISIBLE);
-                btnalisidsil.setVisibility(View.VISIBLE);
+                et_urunid.setVisibility(View.VISIBLE);
+                btnurunidsil.setVisibility(View.VISIBLE);
             }
         });
 
-//region silme işlemi
-        Button alisidsil=findViewById(R.id.btn_alisid_sil);
-        EditText et_alilsar_idsil = findViewById(R.id.et_alilsar_idsil);
-        alisidsil.setOnClickListener(new View.OnClickListener() {
+        //region silme işlemi
+        btnurunidsil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id=et_alilsar_idsil.getText().toString();
+                String id=et_urunid.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://"+ip+"/phpKodlari/alis_sil.php";
+                String url ="http://"+ip+"/phpKodlari/urun_sil.php";
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -94,8 +93,8 @@ public class Alislar extends AppCompatActivity {
                             public void onResponse(String response) {
                                 if(response.equals("Basarili"))
                                 {
-                                    Toast.makeText(Alislar.this ,"Basariyla Silindi",Toast.LENGTH_SHORT).show();
-                                }else Toast.makeText(Alislar.this, response,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Urunler.this ,"Basariyla Silindi",Toast.LENGTH_SHORT).show();
+                                }else Toast.makeText(Urunler.this, response,Toast.LENGTH_SHORT).show();
 
                             }
                         }, new Response.ErrorListener() {
@@ -106,7 +105,7 @@ public class Alislar extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("alis_id", id);
+                        paramV.put("urun_id", id);
                         return paramV;
                     }
                 };
@@ -118,12 +117,11 @@ public class Alislar extends AppCompatActivity {
 //endregion
 
         //region yazdırma
-        rv=findViewById(R.id.rv_alislar);
-        alisArrayList=new ArrayList<>();
+        rv=findViewById(R.id.rv_urunler);
+        urunArrayList=new ArrayList<>();
         viewJsonData();
 
         //endregion
-
     }
 
     //region yazdırmak için gerekli metot
@@ -131,26 +129,26 @@ public class Alislar extends AppCompatActivity {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        alisApi=retrofit.create((AlisApi.class));
-        Call<ArrayList<Alis>> alarraylist=alisApi.callArraylist();
-        alarraylist.enqueue(new Callback<ArrayList<Alis>>() {
+        urunApi=retrofit.create((UrunApi.class));
+        Call<ArrayList<Urun>> ularraylist=urunApi.callArraylist();
+        ularraylist.enqueue(new Callback<ArrayList<Urun>>() {
             @Override
-            public void onResponse(Call<ArrayList<Alis>> call, retrofit2.Response<ArrayList<Alis>> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    alisArrayList = response.body();
-                    int i = 0;
-                    for (i = 0; i < alisArrayList.size(); i++) {
-                        alisAdapter = new AlisAdapter(alisArrayList, Alislar.this);
-                        LinearLayoutManager manager = new LinearLayoutManager(Alislar.this, RecyclerView.VERTICAL, false);
-                        rv.setLayoutManager(manager);
-                        rv.setAdapter(alisAdapter);
-                    }
-                }else{Toast.makeText(Alislar.this, "Alış Listesi Boş", Toast.LENGTH_SHORT).show();}
-            }
+            public void onResponse(Call<ArrayList<Urun>> call, retrofit2.Response<ArrayList<Urun>> response) {
+                if (response.isSuccessful() && response.body() != null){
+                    urunArrayList = response.body();
 
+                    int i = 0;
+                    for (i = 0; i < urunArrayList.size(); i++) {
+                        urunAdapter = new UrunAdapter(urunArrayList, Urunler.this);
+                        LinearLayoutManager manager = new LinearLayoutManager(Urunler.this, RecyclerView.VERTICAL, false);
+                        rv.setLayoutManager(manager);
+                        rv.setAdapter(urunAdapter);
+                    }
+                }else{Toast.makeText(Urunler.this, "Satış Listesi Boş", Toast.LENGTH_SHORT).show();}
+            }
             @Override
-            public void onFailure(Call<ArrayList<Alis>> call, Throwable t) {
-                Toast.makeText(Alislar.this, "Veriler getirilemedi.Hata: "  + t.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<ArrayList<Urun>> call, Throwable t) {
+                Toast.makeText(Urunler.this, "Veriler getirilemedi.Hata: "  + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -13,7 +13,7 @@ import com.example.envanteryonetimsistemi.R;
 
 import java.util.ArrayList;
 
-public class AlisAdapter extends RecyclerView.Adapter<AlisAdapter.ViewHolder> {
+public class AlisAdapter extends RecyclerView.Adapter<AlisAdapter.ViewHolderAlis> {
     private ArrayList<Alis> alisArrayList;
     private Context con;
 
@@ -24,13 +24,13 @@ public class AlisAdapter extends RecyclerView.Adapter<AlisAdapter.ViewHolder> {
     }
     @NonNull
     @Override
-    public AlisAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AlisAdapter.ViewHolderAlis onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.cv_alis,parent,false);
-        return new ViewHolder(view);
+        return new ViewHolderAlis(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AlisAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AlisAdapter.ViewHolderAlis holder, int position) {
         Alis alislar=alisArrayList.get(position);
         holder.alici.setText(String.valueOf(alislar.getAlisid()));
         holder.satici.setText(String.valueOf(alislar.getSaticiid()));
@@ -43,12 +43,12 @@ public class AlisAdapter extends RecyclerView.Adapter<AlisAdapter.ViewHolder> {
         return alisArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolderAlis extends RecyclerView.ViewHolder {
         TextView alici;
         TextView satici;
         TextView urun;
         TextView urunadet;
-        public ViewHolder(@NonNull View itemView)
+        public ViewHolderAlis(@NonNull View itemView)
         {
             super(itemView);
             alici=itemView.findViewById(R.id.tv_alisid);

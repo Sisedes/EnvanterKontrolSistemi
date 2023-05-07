@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi;
+package com.example.envanteryonetimsistemi.SatisBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,12 +20,29 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.MusteriBilgi.Musteri;
+import com.example.envanteryonetimsistemi.MusteriBilgi.MusteriAdapter;
+import com.example.envanteryonetimsistemi.MusteriBilgi.MusteriApi;
+import com.example.envanteryonetimsistemi.MusteriBilgi.Musteriler;
+import com.example.envanteryonetimsistemi.R;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Satislar extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
+public class Satislar extends AppCompatActivity {
+    //region retrofit ile ekrana yazdırmak için gerekli parametreler
+    private SatisApi satisApi;
+    private ArrayList<Satis> satisArrayList;
+    private SatisAdapter satisAdapter;
+    private String BaseUrl="http://"+ip+"/phpKodlari/";
+    private RecyclerView rv;
+    // endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +116,42 @@ public class Satislar extends AppCompatActivity {
             }
         });
 //endregion
+
+        //region yazdırma
+        rv=findViewById(R.id.rv_satislar);
+        satisArrayList=new ArrayList<>();
+        viewJsonData();
+
+        //endregion
     }
 
+    //region yazdırmak için gerekli metot
+    private void viewJsonData() {
+        Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        satisApi=retrofit.create((SatisApi.class));
+        Call<ArrayList<Satis>> slarraylist=satisApi.callArraylist();
+        slarraylist.enqueue(new Callback<ArrayList<Satis>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Satis>> call, retrofit2.Response<ArrayList<Satis>> response) {
+                if (response.isSuccessful() && response.body() != null){
+                    satisArrayList = response.body();
+
+                    int i = 0;
+                    for (i = 0; i < satisArrayList.size(); i++) {
+                        satisAdapter = new SatisAdapter(satisArrayList, Satislar.this);
+                        LinearLayoutManager manager = new LinearLayoutManager(Satislar.this, RecyclerView.VERTICAL, false);
+                        rv.setLayoutManager(manager);
+                        rv.setAdapter(satisAdapter);
+                    }
+                }else{Toast.makeText(Satislar.this, "Satış Listesi Boş", Toast.LENGTH_SHORT).show();}
+            }
+            @Override
+            public void onFailure(Call<ArrayList<Satis>> call, Throwable t) {
+                Toast.makeText(Satislar.this, "Veriler getirilemedi.Hata: "  + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    //endregion
 }
