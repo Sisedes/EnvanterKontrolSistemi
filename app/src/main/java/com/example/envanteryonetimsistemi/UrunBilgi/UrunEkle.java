@@ -35,6 +35,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
 
     //asagidaki dizi secilebilen depoid icin
     //veritabanina yeni depo eklendiginde asagidaki depolar dizisine yeni deponun id'sinin eklenmesi lazim
+    String et_urundepoid;
     ArrayList<String> depolar = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
         EditText et_urunid = findViewById(R.id.et_urunid);
         EditText et_urunfiyat = findViewById(R.id.et_urunfiyat);
         EditText et_urunstok = findViewById(R.id.et_urunstok);
-        EditText et_urundepoid = findViewById(R.id.et_urundepoid);
+
         Button btn_urunkaydet = (Button) findViewById(R.id.btn_urunkaydet);
 
         Spinner depoSpinner = findViewById(R.id.spinner_depo);
@@ -59,9 +60,6 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
                 String et_urunid_text = et_urunid.getText().toString();
                 String et_urunfiyat_Text = et_urunfiyat.getText().toString();
                 String et_urunstok_text = et_urunstok.getText().toString();
-                String et_urundepoid_text = et_urundepoid.getText().toString();
-
-
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url ="http://"+ip+"/phpKodlari/urun_ekle.php";
@@ -88,7 +86,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
                         paramV.put("isim", et_urunisim_text);
                         paramV.put("fiyat", et_urunfiyat_Text);
                         paramV.put("stok_bilgi", et_urunstok_text);
-                        paramV.put("depo_id", et_urundepoid_text);
+                        paramV.put("depo_id", et_urundepoid);
                         return paramV;
                     }
                 };
@@ -135,13 +133,17 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, depolar);
         depoSpinner.setAdapter(adapter);
         depoSpinner.setOnItemSelectedListener(this);
+
+        
+
     }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String depoid = parent.getItemAtPosition(position).toString();
         TextView tv = findViewById(R.id.tv_selecteddepoid);
+        et_urundepoid = parent.getItemAtPosition(position).toString();
         //listeden secilen depo id'yi bu textviewe atadim, bu textviewi görünmez yapar texti veritabanina ekleriz
-        tv.setText(depoid);
+        tv.setText(et_urundepoid);
     }
 
     @Override

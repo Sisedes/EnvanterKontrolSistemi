@@ -35,7 +35,6 @@ public class SatisEkle extends AppCompatActivity {
         EditText et_urun_id = findViewById(R.id.et_urun_id);
         EditText et_adet = findViewById(R.id.et_adet);
         EditText et_alissekli = findViewById(R.id.et_alissekli);
-        Satislar satislar=new Satislar();
         Button btn_satiskaydet = (Button) findViewById(R.id.btn_satiskaydet);
         btn_satiskaydet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +75,6 @@ public class SatisEkle extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-                satislar.viewJsonDataSatislar();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });

@@ -30,7 +30,6 @@ public class MusteriGuncelle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musteri_guncelle);
 
-        Musteriler musteriler=new Musteriler();
         EditText et_musteri_id = findViewById(R.id.et_musteriid);
         EditText et_musteri_ad = findViewById(R.id.et_musteriad);
         EditText et_musteri_tel = findViewById(R.id.et_musteritel);
@@ -82,7 +81,6 @@ public class MusteriGuncelle extends AppCompatActivity {
                 };
                 queue.add(stringRequest);
                 //endregion
-                musteriler.viewJsonDataMusteriler();
             }
         });
     }

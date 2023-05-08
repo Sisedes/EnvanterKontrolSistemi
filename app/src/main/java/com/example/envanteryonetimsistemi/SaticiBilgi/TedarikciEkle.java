@@ -47,7 +47,6 @@ public class TedarikciEkle extends AppCompatActivity {
                 String et_tedarikci_eposta_text = et_tedarikci_eposta.getText().toString();
                 String et_tedarikciadres_text = et_tedarikciadres.getText().toString();
                 String et_sehirkodu_tedarikci_text = et_sehirkodu_tedarikci.getText().toString();
-                Tedarikciler tedarikciler=new Tedarikciler();
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url ="http://"+ip+"/phpKodlari/satici_ekle.php";
 
@@ -79,7 +78,6 @@ public class TedarikciEkle extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-                tedarikciler.viewJsonDataTedarikciler();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });

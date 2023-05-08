@@ -27,7 +27,6 @@ public class AlisEkle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alis_ekle);
-        Alislar alislar=new Alislar();
 
         EditText ettedarikci_id = findViewById(R.id.et_tedarikci_id);
         EditText eturun_id = findViewById(R.id.et_urun_id);
@@ -72,7 +71,6 @@ public class AlisEkle extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-                alislar.viewJsonDataAlislar();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });

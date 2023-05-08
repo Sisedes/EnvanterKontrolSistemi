@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UrunGuncelle extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-
+    String et_urun_depoid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +45,7 @@ public class UrunGuncelle extends AppCompatActivity implements AdapterView.OnIte
         EditText et_urun_ad = findViewById(R.id.et_urunisim);
         EditText et_urun_fiyat = findViewById(R.id.et_urunfiyat);
         EditText et_urun_stok = findViewById(R.id.et_urunstok);
-        EditText et_urun_depoid = findViewById(R.id.et_urundepoid);
+
 
         //region lindosh
         Button btn_urun_guncelle = (Button) findViewById(R.id.btn_urunguncelle); //güncelleme butonu
@@ -57,7 +57,6 @@ public class UrunGuncelle extends AppCompatActivity implements AdapterView.OnIte
                 String ad = et_urun_ad.getText().toString();
                 String fiyat= et_urun_fiyat.getText().toString();
                 String stok = et_urun_stok.getText().toString();
-                String depo_id = et_urun_depoid.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url ="http://"+ip+"/phpKodlari/urun_update.php";
@@ -83,7 +82,7 @@ public class UrunGuncelle extends AppCompatActivity implements AdapterView.OnIte
                         paramV.put("isim", ad);
                         paramV.put("fiyat", fiyat);
                         paramV.put("stok_bilgi", stok);
-                        paramV.put("depo_id", depo_id);
+                        paramV.put("depo_id", et_urun_depoid);
 
                         return paramV;
                     }
@@ -94,6 +93,19 @@ public class UrunGuncelle extends AppCompatActivity implements AdapterView.OnIte
 
             }
         });
+
+        depoSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                et_urun_depoid = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
     }
 
     @Override

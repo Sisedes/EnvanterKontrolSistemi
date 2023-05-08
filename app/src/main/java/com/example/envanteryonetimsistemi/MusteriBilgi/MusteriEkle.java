@@ -47,7 +47,6 @@ public class MusteriEkle extends AppCompatActivity {
                 String etmusterieposta_text = etmusterieposta.getText().toString();
                 String etmusteriadres_text = etmusteriadres.getText().toString();
                 String etsehir_kodu_Text = etsehir_kodu.getText().toString();
-                Musteriler musteriler=new Musteriler();
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url ="http://"+ip+"/phpKodlari/musteri_ekle.php";
 
@@ -78,7 +77,6 @@ public class MusteriEkle extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-                musteriler.viewJsonDataMusteriler();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
