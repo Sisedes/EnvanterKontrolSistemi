@@ -1,4 +1,4 @@
-package com.example.envanteryonetimsistemi.MusteriBilgi;
+package com.example.envanteryonetimsistemi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
@@ -17,7 +17,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.envanteryonetimsistemi.R;
 
 import java.util.HashMap;
 import java.util.Map;
