@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,6 +46,15 @@ public class Alislar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alislar);
         Button btnalisekle = (Button) findViewById(R.id.btn_alisekle);
+        //region liste yenile
+        ImageButton yenile=findViewById(R.id.btn_alislar_listeguncelle);
+        yenile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewJsonDataAlislar();
+            }
+        });
+        //endregion
         btnalisekle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +70,6 @@ public class Alislar extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         Button btnalissil= (Button) findViewById(R.id.btn_alissil);
         EditText et_alisid=(EditText) findViewById(R.id.et_alislar_idsil);
 

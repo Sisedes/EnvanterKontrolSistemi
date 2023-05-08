@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,6 +49,15 @@ public class Tedarikciler extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tedarikciler);
 
+        //region liste yenileme
+        ImageButton yenile=findViewById(R.id.btn_tedarikciler_listeguncelle);
+        yenile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewJsonDataTedarikciler();
+            }
+        });
+        //endregion
         Button btntedarikciekle = (Button) findViewById(R.id.btn_tedarikciekle);
         btntedarikciekle.setOnClickListener(new View.OnClickListener() {
             @Override

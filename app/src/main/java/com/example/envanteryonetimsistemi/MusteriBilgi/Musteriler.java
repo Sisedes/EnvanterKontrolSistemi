@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,6 +44,16 @@ public class Musteriler extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musteriler);
+
+        //region liste yenileme
+        ImageButton yenile=findViewById(R.id.btn_musteriler_listeguncelle);
+        yenile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewJsonDataMusteriler();
+            }
+        });
+        //endregion
         Button btnmusteriekle = (Button) findViewById(R.id.btn_musteriekle);
         btnmusteriekle.setOnClickListener(new View.OnClickListener() {
             @Override

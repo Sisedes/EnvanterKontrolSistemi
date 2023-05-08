@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,6 +48,16 @@ public class Satislar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_satislar);
+        //region liste yenileme
+        ImageButton yenile=findViewById(R.id.btn_satislar_listeguncelle);
+        yenile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewJsonDataSatislar();
+            }
+        });
+        //endregion
+
         Button btnsatisekle = (Button) findViewById(R.id.btn_satisekle);
         btnsatisekle.setOnClickListener(new View.OnClickListener() {
             @Override
