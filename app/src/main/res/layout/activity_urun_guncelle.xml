@@ -13,7 +13,7 @@
         android:layout_marginTop="24dp"
         android:text="ÜRÜN GÜNCELLE"
         android:textSize="25dp"
-        android:textColor="#4269AD"
+        android:textColor="#75659D"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,8 @@
         android:layout_width="169dp"
         android:layout_height="49dp"
         android:layout_marginTop="372dp"
-        android:background="@drawable/bg_btn_1"
+        android:background="@drawable/bg_btn_urunler"
+        android:textColor="@color/white"
         android:text="Güncelle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.928"
@@ -145,38 +146,5 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_urundepoid"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinner_depo"
-        android:layout_width="138dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="@+id/et_urundepoid"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintStart_toStartOf="@+id/et_urundepoid"
-        app:layout_constraintTop_toTopOf="@+id/et_urundepoid" />
-
-    <TextView
-        android:id="@+id/tv_selecteddepoid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_depo" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="39dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="84dp"
-        app:layout_constraintBottom_toBottomOf="@+id/et_urundepoid"
-        app:layout_constraintStart_toStartOf="@+id/spinner_depo"
-        app:layout_constraintTop_toTopOf="@+id/et_urundepoid"
-        app:layout_constraintVertical_bias="0.416"
-        app:srcCompat="@drawable/img_ok" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
