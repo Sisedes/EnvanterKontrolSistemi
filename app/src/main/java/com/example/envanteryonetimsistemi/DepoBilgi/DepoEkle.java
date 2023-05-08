@@ -32,7 +32,7 @@ public class DepoEkle extends AppCompatActivity {
         EditText etdepo_id = findViewById(R.id.et_depo_id);
         EditText etdepo_isim = findViewById(R.id.et_depo_isim);
         EditText etsehirkodu = findViewById(R.id.et_sehirkodu);
-
+        Depolar depolar=new Depolar();
         Button btndepokaydet = (Button) findViewById(R.id.btn_depokaydet);
 
         btndepokaydet.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +70,7 @@ public class DepoEkle extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-
+                depolar.viewJsonDataDepolar();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });

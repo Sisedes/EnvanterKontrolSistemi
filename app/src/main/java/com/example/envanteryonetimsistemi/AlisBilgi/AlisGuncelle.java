@@ -2,14 +2,14 @@ package com.example.envanteryonetimsistemi.AlisBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -33,8 +33,7 @@ public class AlisGuncelle extends AppCompatActivity {
         EditText et_tedarikci_id_u = findViewById(R.id.et_tedarikci_id_u);
         EditText et_urun_id_u = findViewById(R.id.et_urun_id_u);
         EditText et_adet_u = findViewById(R.id.et_adet_u);
-
-        //region
+        Alislar alislar=new Alislar();
         Button btnalisguncelle = (Button) findViewById(R.id.btn_alisguncelle); //güncelleme butonu
 
         btnalisguncelle.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +73,7 @@ public class AlisGuncelle extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-                //endregion
+                alislar.viewJsonDataAlislar();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });

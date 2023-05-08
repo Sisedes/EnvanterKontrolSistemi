@@ -111,7 +111,7 @@ public class Satislar extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-
+                viewJsonDataSatislar();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
@@ -120,13 +120,13 @@ public class Satislar extends AppCompatActivity {
         //region yazdırma
         rv=findViewById(R.id.rv_satislar);
         satisArrayList=new ArrayList<>();
-        viewJsonData();
+        viewJsonDataSatislar();
 
         //endregion
     }
 
     //region yazdırmak için gerekli metot
-    private void viewJsonData() {
+    protected void viewJsonDataSatislar() {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

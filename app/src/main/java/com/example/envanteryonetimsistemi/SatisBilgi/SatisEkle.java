@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.envanteryonetimsistemi.R;
+import com.example.envanteryonetimsistemi.SaticiBilgi.Tedarikciler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,9 +35,8 @@ public class SatisEkle extends AppCompatActivity {
         EditText et_urun_id = findViewById(R.id.et_urun_id);
         EditText et_adet = findViewById(R.id.et_adet);
         EditText et_alissekli = findViewById(R.id.et_alissekli);
-
+        Satislar satislar=new Satislar();
         Button btn_satiskaydet = (Button) findViewById(R.id.btn_satiskaydet);
-
         btn_satiskaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,8 +45,7 @@ public class SatisEkle extends AppCompatActivity {
                 String et_urun_id_Text = et_urun_id.getText().toString();
                 String et_adet_text = et_adet.getText().toString();
                 String et_alissekli_text = et_alissekli.getText().toString();
-
-
+                Satislar satislar=new Satislar();
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url ="http://"+ip+"/phpKodlari/satis_ekle.php";
 
@@ -77,7 +76,7 @@ public class SatisEkle extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-
+                satislar.viewJsonDataSatislar();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });

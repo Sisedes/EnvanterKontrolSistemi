@@ -39,7 +39,7 @@ public class MusteriAdapter extends RecyclerView.Adapter<MusteriAdapter.ViewHold
         holder.telefonno.setText(musteriler.getTelefonno());
         holder.eposta.setText(musteriler.getEposta());
         holder.adres.setText(musteriler.getAdres());
-        //holder.sehirid.setText(musteriler.getSehirid());
+        holder.sehirid.setText(musteriler.getSehirid());
     }
 
     @Override
@@ -53,7 +53,7 @@ public class MusteriAdapter extends RecyclerView.Adapter<MusteriAdapter.ViewHold
         TextView telefonno;
         TextView eposta;
         TextView adres;
-        //TextView sehirid;
+        TextView sehirid;
         public ViewHolderMusteri(@NonNull View itemView)
         {
             super(itemView);
@@ -62,7 +62,7 @@ public class MusteriAdapter extends RecyclerView.Adapter<MusteriAdapter.ViewHold
             telefonno=itemView.findViewById(R.id.tv_tel);
             eposta=itemView.findViewById(R.id.tv_mail);
             adres=itemView.findViewById(R.id.tv_adres);
-            //sehirid=itemView.findViewById(R.id.tv_deposehirid);
+            sehirid=itemView.findViewById(R.id.tv_musterisehirid);
         }
     }
 }

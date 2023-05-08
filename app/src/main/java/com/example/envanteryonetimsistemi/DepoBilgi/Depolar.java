@@ -107,7 +107,7 @@ public class Depolar extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-
+                viewJsonDataDepolar();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
@@ -116,14 +116,14 @@ public class Depolar extends AppCompatActivity {
         //region yazdırma
         rv=findViewById(R.id.rv_depolar);
         depoArrayList=new ArrayList<>();
-        viewJsonData();
+        viewJsonDataDepolar();
 
         //endregion
 
     }
 
     //region yazdırmak için gerekli metot
-    private void viewJsonData() {
+    protected void viewJsonDataDepolar() {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

@@ -20,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.DepoBilgi.Depolar;
 import com.example.envanteryonetimsistemi.R;
 
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class Alislar extends AppCompatActivity {
             }
         });
 
-        //region silme işlemi
+//region silme işlemi
         Button alisidsil=findViewById(R.id.btn_alisid_sil);
         EditText et_alislar_idsil = findViewById(R.id.et_alislar_idsil);
         alisidsil.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +111,7 @@ public class Alislar extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-
+                viewJsonDataAlislar();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
@@ -119,14 +120,14 @@ public class Alislar extends AppCompatActivity {
         //region yazdırma
         rv=findViewById(R.id.rv_alislar);
         alisArrayList=new ArrayList<>();
-        viewJsonData();
+        viewJsonDataAlislar();
 
         //endregion
 
     }
 
     //region yazdırmak için gerekli metot
-    private void viewJsonData() {
+    protected void viewJsonDataAlislar() {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

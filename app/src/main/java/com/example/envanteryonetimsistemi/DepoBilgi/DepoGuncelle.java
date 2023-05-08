@@ -28,7 +28,7 @@ public class DepoGuncelle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_depo_guncelle);
-
+        Depolar depolar=new Depolar();
 
         EditText et_depo_id = findViewById(R.id.et_depo_id);
         EditText et_depo_isim = findViewById(R.id.et_depo_isim);
@@ -74,7 +74,7 @@ public class DepoGuncelle extends AppCompatActivity {
                 };
                 queue.add(stringRequest);
                 //endregion
-
+                depolar.viewJsonDataDepolar();
             }
         });
     }

@@ -110,7 +110,7 @@ public class Urunler extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-
+                viewJsonDataUrunler();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
@@ -119,13 +119,13 @@ public class Urunler extends AppCompatActivity {
         //region yazdırma
         rv=findViewById(R.id.rv_urunler);
         urunArrayList=new ArrayList<>();
-        viewJsonData();
+        viewJsonDataUrunler();
 
         //endregion
     }
 
     //region yazdırmak için gerekli metot
-    private void viewJsonData() {
+    protected void viewJsonDataUrunler() {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

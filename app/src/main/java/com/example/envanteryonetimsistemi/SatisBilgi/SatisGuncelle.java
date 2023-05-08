@@ -28,7 +28,7 @@ public class SatisGuncelle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_satis_guncelle);
-
+        Satislar satislar=new Satislar();
         EditText et_satisid = findViewById(R.id.et_satis_id);
         EditText et_musteriid = findViewById(R.id.et_musteri_id);
         EditText et_urunid = findViewById(R.id.et_urun_id);
@@ -80,7 +80,7 @@ public class SatisGuncelle extends AppCompatActivity {
                 };
                 queue.add(stringRequest);
                 //endregion
-
+                satislar.viewJsonDataSatislar();
             }
         });
     }

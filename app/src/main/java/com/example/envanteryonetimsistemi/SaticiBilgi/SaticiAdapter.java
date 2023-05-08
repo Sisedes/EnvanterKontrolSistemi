@@ -35,7 +35,7 @@ public class SaticiAdapter extends RecyclerView.Adapter<SaticiAdapter.ViewHolder
         holder.telefonno.setText(saticilar.getTelefonno());
         holder.eposta.setText(saticilar.getEposta());
         holder.adres.setText(saticilar.getAdres());
-        //holder.sehirid.setText(musteriler.getSehirid());
+        holder.sehirid.setText(saticilar.getSehirid());
     }
 
     @Override
@@ -49,7 +49,7 @@ public class SaticiAdapter extends RecyclerView.Adapter<SaticiAdapter.ViewHolder
         TextView telefonno;
         TextView eposta;
         TextView adres;
-        //TextView sehirid;
+        TextView sehirid;
         public ViewHolderSatici(@NonNull View itemView)
         {
             super(itemView);
@@ -58,7 +58,7 @@ public class SaticiAdapter extends RecyclerView.Adapter<SaticiAdapter.ViewHolder
             telefonno=itemView.findViewById(R.id.tv_tel);
             eposta=itemView.findViewById(R.id.tv_email);
             adres=itemView.findViewById(R.id.tv_adres);
-            //sehirid=itemView.findViewById(R.id.tv_deposehirid);
+            sehirid=itemView.findViewById(R.id.tv_tedarikcisehirid);
         }
     }
 }

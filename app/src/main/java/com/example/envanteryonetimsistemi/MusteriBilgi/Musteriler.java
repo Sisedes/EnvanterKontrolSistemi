@@ -106,7 +106,7 @@ public class Musteriler extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-
+                viewJsonDataMusteriler();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
@@ -115,13 +115,13 @@ public class Musteriler extends AppCompatActivity {
         //region yazdırma
         rv=findViewById(R.id.rv_mutseriler);
         musteriArrayList=new ArrayList<>();
-        viewJsonData();
+        viewJsonDataMusteriler();
 
         //endregion
     }
 
     //region yazdırmak için gerekli metot
-    private void viewJsonData() {
+    protected void viewJsonDataMusteriler() {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

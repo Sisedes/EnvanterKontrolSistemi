@@ -40,7 +40,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_urun_ekle);
-
+        Urunler urunler=new Urunler();
         EditText et_urunisim = findViewById(R.id.et_urunisim);
         EditText et_urunid = findViewById(R.id.et_urunid);
         EditText et_urunfiyat = findViewById(R.id.et_urunfiyat);
@@ -93,7 +93,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
                     }
                 };
                 queue.add(stringRequest);
-
+                urunler.viewJsonDataUrunler();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
 

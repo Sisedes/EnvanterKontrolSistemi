@@ -40,7 +40,7 @@ public class UrunGuncelle extends AppCompatActivity implements AdapterView.OnIte
 
 
         ///update icin
-
+        Urunler urunler=new Urunler();
         EditText et_urun_id = findViewById(R.id.et_urunid);
         EditText et_urun_ad = findViewById(R.id.et_urunisim);
         EditText et_urun_fiyat = findViewById(R.id.et_urunfiyat);
@@ -89,6 +89,7 @@ public class UrunGuncelle extends AppCompatActivity implements AdapterView.OnIte
                     }
                 };
                 queue.add(stringRequest);
+                urunler.viewJsonDataUrunler();
                 //endregion
 
             }

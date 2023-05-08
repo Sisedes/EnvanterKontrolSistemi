@@ -2,14 +2,15 @@ package com.example.envanteryonetimsistemi.MusteriBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -29,12 +30,13 @@ public class MusteriGuncelle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musteri_guncelle);
 
+        Musteriler musteriler=new Musteriler();
         EditText et_musteri_id = findViewById(R.id.et_musteriid);
         EditText et_musteri_ad = findViewById(R.id.et_musteriad);
         EditText et_musteri_tel = findViewById(R.id.et_musteritel);
         EditText et_musteri_eposta = findViewById(R.id.et_musterieposta);
         EditText et_musteri_adres = findViewById(R.id.et_musteriadres);
-        EditText et_musteri_sehir = findViewById(R.id.et_sehirkodu);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText et_musteri_sehir = findViewById(R.id.et_sehirkoduU);
 
         //region lindosh
         Button btnmusteriguncelle = (Button) findViewById(R.id.btn_musteriguncelle); //güncelleme butonu
@@ -80,7 +82,7 @@ public class MusteriGuncelle extends AppCompatActivity {
                 };
                 queue.add(stringRequest);
                 //endregion
-
+                musteriler.viewJsonDataMusteriler();
             }
         });
     }

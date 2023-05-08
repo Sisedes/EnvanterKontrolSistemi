@@ -28,7 +28,7 @@ public class TedarikciGuncelle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tedarikci_guncelle);
-
+        Tedarikciler tedarikciler=new Tedarikciler();
         EditText et_tedarikci_id = findViewById(R.id.et_tedarikciidE);
         EditText et_tedarikci_ad = findViewById(R.id.et_tedarikciadE);
         EditText et_tedarikci_tel = findViewById(R.id.et_tedarikcitelE);
@@ -80,7 +80,7 @@ public class TedarikciGuncelle extends AppCompatActivity {
                 };
                 queue.add(stringRequest);
         //endregion
-
+                tedarikciler.viewJsonDataTedarikciler();
             }
         });
     }

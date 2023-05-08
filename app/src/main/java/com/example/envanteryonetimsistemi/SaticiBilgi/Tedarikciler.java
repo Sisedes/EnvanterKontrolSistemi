@@ -111,7 +111,7 @@ public class Tedarikciler extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-
+                viewJsonDataTedarikciler();
                 //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
             }
         });
@@ -120,13 +120,13 @@ public class Tedarikciler extends AppCompatActivity {
         //region yazdırma
         rv=findViewById(R.id.rv_tedarikciler);
         saticiArrayList=new ArrayList<>();
-        viewJsonData();
+        viewJsonDataTedarikciler();
 
         //endregion
     }
 
     //region yazdırmak için gerekli metot
-    private void viewJsonData() {
+    protected void viewJsonDataTedarikciler() {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
