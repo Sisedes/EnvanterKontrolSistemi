@@ -22,8 +22,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_alislar"
-        android:layout_width="392dp"
-        android:layout_height="362dp"
+        android:layout_width="match_parent"
+        android:layout_height="423dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,9 +39,10 @@
         android:text="EKLE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_alissil"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_alislar" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_alislar"
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
         android:id="@+id/btn_alissil"
@@ -54,7 +55,8 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_alislar" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_alislar"
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
         android:id="@+id/btn_alisguncelle"
@@ -66,10 +68,11 @@
         android:text="GÜNCELLE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_alissil"
-        app:layout_constraintTop_toBottomOf="@+id/rv_alislar" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_alislar"
+        app:layout_constraintVertical_bias="0.36" />
 
     <EditText
-        android:id="@+id/et_alilsar_idsil"
+        android:id="@+id/et_alislar_idsil"
         android:layout_width="88dp"
         android:layout_height="49dp"
         android:layout_marginStart="36dp"
@@ -92,7 +95,7 @@
         android:background="@drawable/bg_btn_2"
         android:text="Yandaki ID'yi Sil"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/et_alilsar_idsil"
+        app:layout_constraintStart_toEndOf="@+id/et_alislar_idsil"
         app:layout_constraintTop_toBottomOf="@+id/btn_alissil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

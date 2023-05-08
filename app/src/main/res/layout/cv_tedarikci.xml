@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="410dp"
-    android:layout_height="140dp">
+    android:layout_width="match_parent"
+    android:layout_height="110dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="115dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -25,7 +25,7 @@
             <TextView
                 android:id="@+id/textView29"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="27dp"
                 android:layout_marginTop="16dp"
                 android:background="#B29EA6"
                 android:text="             "
@@ -36,24 +36,23 @@
 
             <TextView
                 android:id="@+id/tv_tedarikciadi"
-                android:layout_width="222dp"
-                android:layout_height="23dp"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/black"
-                android:textSize="16dp"
+                android:layout_width="180dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:textSize="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.78"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.186" />
+                app:layout_constraintVertical_bias="0.181" />
 
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
                 android:text="Adres : "
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/tv_email"
@@ -64,8 +63,9 @@
                 android:layout_width="154dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="26dp"
-                android:layout_marginEnd="52dp"
+                android:layout_marginEnd="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.076"
                 app:layout_constraintStart_toEndOf="@+id/tv_email"
                 app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
@@ -93,11 +93,11 @@
                 android:id="@+id/tv_tedarikciid"
                 android:layout_width="47dp"
                 android:layout_height="22dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
 
                 android:textColor="@color/black"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 app:layout_constraintStart_toEndOf="@+id/textView41"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="44dp"
                 android:text="E-mail : "
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -114,23 +114,44 @@
 
             <TextView
                 android:id="@+id/tv_email"
-                android:layout_width="95dp"
-                android:layout_height="18dp"
+                android:layout_width="145dp"
+                android:layout_height="24dp"
                 android:layout_marginStart="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView22"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.855" />
+                app:layout_constraintVertical_bias="0.886" />
 
             <TextView
                 android:id="@+id/textView41"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="5dp"
                 android:text="ID: "
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/textView29"
+                app:layout_constraintTop_toTopOf="@+id/textView29" />
+
+            <TextView
+                android:id="@+id/tv_tedarikcisehirid"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toEndOf="@+id/textView43"
+                app:layout_constraintTop_toTopOf="@+id/textView29" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Şehir :"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tv_tedarikciadi"
                 app:layout_constraintTop_toTopOf="@+id/textView29" />
 
 

@@ -54,12 +54,12 @@
         android:id="@+id/et_musterieposta"
         android:layout_width="360dp"
         android:layout_height="49dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginTop="308dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,13 +78,13 @@
 
     <Button
         android:id="@+id/btn_musterikaydet"
-        android:layout_width="142dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="177dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/bg_btn_1"
         android:text="Kaydet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_musteriadres" />
 
@@ -92,7 +92,7 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="25dp"
         android:text="Müşteri Ad-Soyad"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_musteriad"
@@ -102,7 +102,7 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="25dp"
         android:text="Telefon"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_musteritel"
@@ -112,7 +112,7 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="25dp"
         android:text="E-posta"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_musterieposta"
@@ -122,23 +122,23 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="25dp"
         android:text="Adres"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/et_musteriadres"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/et_sehir_kodu"
+        android:id="@+id/et_sehirkodu"
         android:layout_width="155dp"
         android:layout_height="52dp"
-        android:layout_marginTop="512dp"
+        android:layout_marginTop="508dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/btn_musterikaydet"
-        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -146,10 +146,10 @@
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="25dp"
         android:text="Şehir kodu"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_sehir_kodu"
+        app:layout_constraintBottom_toTopOf="@+id/et_sehirkodu"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

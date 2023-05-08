@@ -62,7 +62,7 @@ public class Alislar extends AppCompatActivity {
         });
 
         Button btnalissil= (Button) findViewById(R.id.btn_alissil);
-        EditText et_alisid=(EditText) findViewById(R.id.et_alilsar_idsil);
+        EditText et_alisid=(EditText) findViewById(R.id.et_alislar_idsil);
 
         //!!id ile silme islemini yapacak buton :
         Button btnalisidsil= (Button) findViewById(R.id.btn_alisid_sil);
@@ -79,11 +79,11 @@ public class Alislar extends AppCompatActivity {
 
 //region silme işlemi
         Button alisidsil=findViewById(R.id.btn_alisid_sil);
-        EditText et_alilsar_idsil = findViewById(R.id.et_alilsar_idsil);
+        EditText et_alislar_idsil = findViewById(R.id.et_alislar_idsil);
         alisidsil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id=et_alilsar_idsil.getText().toString();
+                String id=et_alislar_idsil.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url ="http://"+ip+"/phpKodlari/alis_sil.php";

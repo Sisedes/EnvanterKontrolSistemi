@@ -23,8 +23,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_depolar"
-        android:layout_width="398dp"
-        android:layout_height="395dp"
+        android:layout_width="match_parent"
+        android:layout_height="432dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,10 +41,10 @@
         android:text="EKLE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_deposil"
-        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_depolar"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintVertical_bias="0.383" />
 
     <Button
         android:id="@+id/btn_deposil"
@@ -57,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_depoguncelle"
         app:layout_constraintTop_toBottomOf="@+id/rv_depolar"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.383" />
 
     <Button
         android:id="@+id/btn_depoguncelle"
@@ -70,13 +70,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_depolar"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.383" />
 
     <EditText
         android:id="@+id/et_depolar_idsil"
         android:layout_width="88dp"
         android:layout_height="49dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/bg_tv2"
         android:drawableLeft="@drawable/icon_bos"
@@ -91,7 +91,7 @@
         android:id="@+id/btn_depoid_sil"
         android:layout_width="198dp"
         android:layout_height="45dp"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/bg_btn_2"
         android:text="Yandaki ID'yi Sil"

@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="410dp"
+    android:layout_width="match_parent"
     android:layout_height="65dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
@@ -24,8 +24,8 @@
             <TextView
                 android:id="@+id/textView25"
                 android:layout_width="57dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="13dp"
                 android:background="#DBA051"
                 android:text="       "
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
                 android:id="@+id/tv_depoadi"
                 android:layout_width="141dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:textColor="@color/black"
                 android:textSize="12dp"
@@ -73,7 +73,7 @@
                 android:id="@+id/tv_deposehirid"
                 android:layout_width="48dp"
                 android:layout_height="19dp"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="8dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView35"
                 app:layout_constraintTop_toTopOf="@+id/tv_depoadi" />
