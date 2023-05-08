@@ -171,7 +171,7 @@
         android:layout_marginStart="25dp"
         android:text="Şehir kodu"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_sehirkodu"
+        app:layout_constraintBottom_toTopOf="@+id/et_sehirkoduU"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
