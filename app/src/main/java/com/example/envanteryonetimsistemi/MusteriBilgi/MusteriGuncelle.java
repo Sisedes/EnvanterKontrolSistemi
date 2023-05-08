@@ -36,7 +36,7 @@ public class MusteriGuncelle extends AppCompatActivity {
         EditText et_musteri_tel = findViewById(R.id.et_musteritel);
         EditText et_musteri_eposta = findViewById(R.id.et_musterieposta);
         EditText et_musteri_adres = findViewById(R.id.et_musteriadres);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText et_musteri_sehir = findViewById(R.id.et_sehirkoduU);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText et_musteri_sehir = findViewById(R.id.et_sehirkodu);
 
         //region lindosh
         Button btnmusteriguncelle = (Button) findViewById(R.id.btn_musteriguncelle); //güncelleme butonu
