@@ -2,14 +2,14 @@ package com.example.envanteryonetimsistemi.MusteriBilgi;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,7 +34,7 @@ public class MusteriGuncelle extends AppCompatActivity {
         EditText et_musteri_tel = findViewById(R.id.et_musteritel);
         EditText et_musteri_eposta = findViewById(R.id.et_musterieposta);
         EditText et_musteri_adres = findViewById(R.id.et_musteriadres);
-        EditText et_musteri_sehir = findViewById(R.id.et_sehir_kodu);
+        EditText et_musteri_sehir = findViewById(R.id.et_sehirkodu);
 
         //region lindosh
         Button btnmusteriguncelle = (Button) findViewById(R.id.btn_musteriguncelle); //güncelleme butonu
