@@ -102,4 +102,14 @@
         app:layout_constraintStart_toEndOf="@+id/et_alislar_idsil"
         app:layout_constraintTop_toBottomOf="@+id/btn_alissil" />
 
+    <ImageButton
+        android:id="@+id/btn_alislar_listeguncelle"
+        android:layout_width="69dp"
+        android:layout_height="62dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintStart_toEndOf="@+id/text_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_guncellee" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

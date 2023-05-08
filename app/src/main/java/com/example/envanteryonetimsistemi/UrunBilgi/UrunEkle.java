@@ -31,12 +31,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class UrunEkle extends AppCompatActivity {
 
-    //asagidaki dizi secilebilen depoid icin
-    //veritabanina yeni depo eklendiginde asagidaki depolar dizisine yeni deponun id'sinin eklenmesi lazim
-    String et_urundepoid;
-    ArrayList<String> depolar = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +42,10 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
         EditText et_urunid = findViewById(R.id.et_urunid);
         EditText et_urunfiyat = findViewById(R.id.et_urunfiyat);
         EditText et_urunstok = findViewById(R.id.et_urunstok);
+        EditText et_urundepoid = findViewById(R.id.et_urundepoid);
 
         Button btn_urunkaydet = (Button) findViewById(R.id.btn_urunkaydet);
 
-        Spinner depoSpinner = findViewById(R.id.spinner_depo);
 
 
 //region urunekle
@@ -60,6 +56,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
                 String et_urunid_text = et_urunid.getText().toString();
                 String et_urunfiyat_Text = et_urunfiyat.getText().toString();
                 String et_urunstok_text = et_urunstok.getText().toString();
+                String et_urundepoid_text= et_urundepoid.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url ="http://"+ip+"/phpKodlari/urun_ekle.php";
@@ -86,7 +83,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
                         paramV.put("isim", et_urunisim_text);
                         paramV.put("fiyat", et_urunfiyat_Text);
                         paramV.put("stok_bilgi", et_urunstok_text);
-                        paramV.put("depo_id", et_urundepoid);
+                        paramV.put("depo_id", et_urundepoid_text);
                         return paramV;
                     }
                 };
@@ -98,58 +95,7 @@ public class UrunEkle extends AppCompatActivity implements AdapterView.OnItemSel
         });
 //endregion
 
-        //region dropdowna veriçekme
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url ="http://"+ip+"/phpKodlari/dropdown_depo_id.php";
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try{
-                            JSONArray jarray=new JSONArray(response);
-                            for(int i=0; i<jarray.length(); i++)
-                            {
-                                JSONObject jobject=jarray.getJSONObject(i);
-                                String hehe=jobject.getString("depo_id");
-                                depolar.add(hehe);
-                            }
-                        }
-                        catch (JSONException e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Hata", error.getLocalizedMessage());
-            }
-        })
-        ;
-        queue.add(stringRequest);
-        //endregion
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, depolar);
-        depoSpinner.setAdapter(adapter);
-        depoSpinner.setOnItemSelectedListener(this);
-
-        
 
     }
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String depoid = parent.getItemAtPosition(position).toString();
-        TextView tv = findViewById(R.id.tv_selecteddepoid);
-        et_urundepoid = parent.getItemAtPosition(position).toString();
-        //listeden secilen depo id'yi bu textviewe atadim, bu textviewi görünmez yapar texti veritabanina ekleriz
-        tv.setText(et_urundepoid);
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-     //bos kalsin
-    }
-
 
 }

@@ -105,4 +105,15 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_musterisil" />
 
 
+    <ImageButton
+        android:id="@+id/btn_musteriler_listeguncelle"
+        android:layout_width="69dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintStart_toEndOf="@+id/text_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_guncellee" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
