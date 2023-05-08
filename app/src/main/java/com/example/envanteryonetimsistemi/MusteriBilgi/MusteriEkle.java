@@ -34,7 +34,7 @@ public class MusteriEkle extends AppCompatActivity {
         EditText etmusteritel = findViewById(R.id.et_musteritel);
         EditText etmusterieposta = findViewById(R.id.et_musterieposta);
         EditText etmusteriadres = findViewById(R.id.et_musteriadres);
-        EditText etsehir_kodu = findViewById(R.id.et_sehir_kodu);
+        EditText etsehir_kodu = findViewById(R.id.et_sehirkodu);
 
         Button btnmusterikaydet = (Button) findViewById(R.id.btn_musterikaydet);
 

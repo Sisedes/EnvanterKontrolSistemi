@@ -20,7 +20,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.envanteryonetimsistemi.DepoBilgi.Depolar;
 import com.example.envanteryonetimsistemi.R;
 
 import java.util.ArrayList;
@@ -77,7 +76,7 @@ public class Alislar extends AppCompatActivity {
             }
         });
 
-//region silme işlemi
+        //region silme işlemi
         Button alisidsil=findViewById(R.id.btn_alisid_sil);
         EditText et_alislar_idsil = findViewById(R.id.et_alislar_idsil);
         alisidsil.setOnClickListener(new View.OnClickListener() {
