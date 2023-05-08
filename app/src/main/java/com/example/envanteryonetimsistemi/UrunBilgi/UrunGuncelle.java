@@ -33,7 +33,6 @@ public class UrunGuncelle extends AppCompatActivity {
 
 
         ///update icin
-        Urunler urunler=new Urunler();
         EditText et_urun_id = findViewById(R.id.et_urunid);
         EditText et_urun_ad = findViewById(R.id.et_urunisim);
         EditText et_urun_fiyat = findViewById(R.id.et_urunfiyat);
@@ -83,7 +82,6 @@ public class UrunGuncelle extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
-                urunler.viewJsonDataUrunler();
                 //endregion
 
             }

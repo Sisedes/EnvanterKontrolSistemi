@@ -30,11 +30,11 @@ public class AlisGuncelle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_alis_guncelle);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText et_alis_id_u = findViewById(R.id.et_alis_id_u);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText et_tedarikci_id_u = findViewById(R.id.et_tedarikci_id_u);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText et_urun_id_u = findViewById(R.id.et_urun_id_u);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText et_adet_u = findViewById(R.id.et_adet_u);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button btnalisguncelle = (Button) findViewById(R.id.btn_alisguncelle); //güncelleme butonu
+        EditText et_alis_id_u = findViewById(R.id.et_alis_id_u);
+        EditText et_tedarikci_id_u = findViewById(R.id.et_tedarikci_id_u);
+        EditText et_urun_id_u = findViewById(R.id.et_urun_id_u);
+        EditText et_adet_u = findViewById(R.id.et_adet_u);
+        Button btnalisguncelle = (Button) findViewById(R.id.btn_alisguncelle); //güncelleme butonu
 
         btnalisguncelle.setOnClickListener(new View.OnClickListener() {
             @Override
