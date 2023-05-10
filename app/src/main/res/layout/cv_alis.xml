@@ -47,7 +47,7 @@
                 android:id="@+id/tv_urunid"
                 android:layout_width="47dp"
                 android:layout_height="15dp"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="20dp"
                 android:textColor="@color/black"
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
                 android:layout_width="35dp"
                 android:layout_height="15dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="23dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintStart_toEndOf="@+id/textView34"
                 app:layout_constraintTop_toTopOf="parent" />
 

@@ -81,5 +81,5 @@ public class TedarikcilerinUrunleri extends AppCompatActivity {
         });
     }
     //endregion
-    }
+
 }
