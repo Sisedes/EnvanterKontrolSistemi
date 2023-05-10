@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,6 +16,18 @@
         android:theme="@style/Theme.EnvanterYonetimSistemi"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".ViewDepoUrun.DepolarinUrunleri"
+            android:exported="false" />
+        <activity
+            android:name=".ViewMusteriSehir.MusterilerSehir"
+            android:exported="false" />
+        <activity
+            android:name=".ViewTedarikciUrun.TedarikcilerinUrunleri"
+            android:exported="false" />
+        <activity
+            android:name=".SaticiUrunBilgi.SaticiUrun"
+            android:exported="false" />
         <activity
             android:name=".UrunBilgi.UrunGuncelle"
             android:exported="false" />

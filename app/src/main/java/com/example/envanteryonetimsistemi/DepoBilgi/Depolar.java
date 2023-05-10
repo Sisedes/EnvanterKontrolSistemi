@@ -21,7 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.envanteryonetimsistemi.MusteriBilgi.Musteriler;
+import com.example.envanteryonetimsistemi.ViewDepoUrun.DepolarinUrunleri;
 import com.example.envanteryonetimsistemi.R;
 
 import java.util.ArrayList;
@@ -45,6 +45,17 @@ public class Depolar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_depolar);
+
+        ImageButton depolarurun= (ImageButton) findViewById(R.id.btn_depourunleri);
+
+        depolarurun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Depolar.this, DepolarinUrunleri.class);
+                startActivity(intent);
+            }
+        });
+
         //region liste yenileme
         ImageButton yenile=findViewById(R.id.btn_depolar_listeguncelle);
         yenile.setOnClickListener(new View.OnClickListener() {

@@ -108,11 +108,23 @@
         android:id="@+id/btn_tedarikciler_listeguncelle"
         android:layout_width="69dp"
         android:layout_height="62dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintEnd_toStartOf="@+id/text_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_guncellee" />
+
+    <ImageButton
+        android:id="@+id/btn_tedarikcilerinurunleri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@android:color/transparent"
         app:layout_constraintStart_toEndOf="@+id/text_1"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_guncellee" />
+        app:srcCompat="@drawable/icon_digersayfa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

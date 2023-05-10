@@ -11,10 +11,10 @@
         android:id="@+id/text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="DEPOLAR"
-        android:textSize="25dp"
         android:textColor="#D49138"
+        android:textSize="25dp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -109,11 +109,22 @@
         android:id="@+id/btn_depolar_listeguncelle"
         android:layout_width="69dp"
         android:layout_height="62dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintEnd_toStartOf="@+id/text_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_guncellee" />
+
+    <ImageButton
+        android:id="@+id/btn_depourunleri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@android:color/transparent"
         app:layout_constraintStart_toEndOf="@+id/text_1"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_guncellee" />
+        app:srcCompat="@drawable/icon_digersayfa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

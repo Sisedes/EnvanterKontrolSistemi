@@ -21,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.envanteryonetimsistemi.ViewMusteriSehir.MusterilerSehir;
 import com.example.envanteryonetimsistemi.R;
 
 import java.util.ArrayList;
@@ -44,6 +45,16 @@ public class Musteriler extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musteriler);
+
+        ImageButton musterisehir= (ImageButton) findViewById(R.id.btn_sehirmusterisayisi);
+
+        musterisehir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Musteriler.this, MusterilerSehir.class);
+                startActivity(intent);
+            }
+        });
 
         //region liste yenileme
         ImageButton yenile=findViewById(R.id.btn_musteriler_listeguncelle);

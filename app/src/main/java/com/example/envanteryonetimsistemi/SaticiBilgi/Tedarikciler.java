@@ -22,10 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.envanteryonetimsistemi.R;
-import com.example.envanteryonetimsistemi.SatisBilgi.Satis;
-import com.example.envanteryonetimsistemi.SatisBilgi.SatisAdapter;
-import com.example.envanteryonetimsistemi.SatisBilgi.SatisApi;
-import com.example.envanteryonetimsistemi.SatisBilgi.Satislar;
+import com.example.envanteryonetimsistemi.ViewTedarikciUrun.TedarikcilerinUrunleri;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,6 +45,16 @@ public class Tedarikciler extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tedarikciler);
+
+        ImageButton tedarikciurun= (ImageButton) findViewById(R.id.btn_tedarikcilerinurunleri);
+
+        tedarikciurun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Tedarikciler.this, TedarikcilerinUrunleri.class);
+                startActivity(intent);
+            }
+        });
 
         //region liste yenileme
         ImageButton yenile=findViewById(R.id.btn_tedarikciler_listeguncelle);
