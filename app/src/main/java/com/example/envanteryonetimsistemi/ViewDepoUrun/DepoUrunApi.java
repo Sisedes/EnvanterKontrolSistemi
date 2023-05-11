@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 public interface DepoUrunApi {
 
     //buraya php dosyası eklenecek
-    @GET(".php")
+    @GET("depolarinurunleri.php")
     Call<ArrayList<DepoUrun>> callArraylist();
 }

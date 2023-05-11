@@ -2,14 +2,14 @@ package com.example.envanteryonetimsistemi.ViewTedarikciUrun;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.envanteryonetimsistemi.R;
 
@@ -71,7 +71,7 @@ public class TedarikcilerinUrunleri extends AppCompatActivity {
                         rv.setAdapter(tedarikciUrunAdapter);
                     }
                 }else{
-                    Toast.makeText(TedarikcilerinUrunleri.this, "Liste Boş", Toast.LENGTH_SHORT).show();}
+                    Toast.makeText(TedarikcilerinUrunleri.this, "Liste Bos", Toast.LENGTH_SHORT).show();}
             }
 
             @Override

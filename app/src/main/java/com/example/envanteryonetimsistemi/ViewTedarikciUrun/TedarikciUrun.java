@@ -4,14 +4,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class TedarikciUrun {
 
-    @SerializedName("satici_as")
-    private int saticiad;
+    @SerializedName("satici_ad")
+    private String saticiad;
     @SerializedName("urun_ismi")
-    private int urunismi;
+    private String urunismi;
     @SerializedName("fiyat")
     private int fiyat;
 
-    public TedarikciUrun(int saticiad,int urunismi, int fiyat)
+    public TedarikciUrun(String saticiad,String urunismi, int fiyat)
     {
         this.saticiad=saticiad;
         this.urunismi=urunismi;
@@ -19,15 +19,15 @@ public class TedarikciUrun {
 
     }
 
-    public int getSaticiad() {
+    public String getSaticiad() {
         return saticiad;
     }
-    public void setSaticiad(int saticiad){this.saticiad=saticiad;}
+    public void setSaticiad(String saticiad){this.saticiad=saticiad;}
 
-    public int getUrunismi() {
+    public String getUrunismi() {
         return urunismi;
     }
-    public void setUrunismi(int urunismi){this.urunismi=urunismi;}
+    public void setUrunismi(String urunismi){this.urunismi=urunismi;}
     public int getFiyat() {
         return fiyat;
     }

@@ -9,9 +9,9 @@ public class DepoUrun {
     @SerializedName("urun_id")
     private int urunid;
     @SerializedName("urun_isim")
-    private int urunisim;
+    private String urunisim;
 
-    public DepoUrun(int depoid,int urunid, int urunisim)
+    public DepoUrun(int depoid,int urunid, String urunisim)
     {
         this.depoid=depoid;
         this.urunid=urunid;
@@ -27,9 +27,9 @@ public class DepoUrun {
         return urunid;
     }
     public void setUrunid(int urunid){this.urunid=urunid;}
-    public int getUrunisim() {
+    public String getUrunisim() {
         return urunisim;
     }
-    public void setUrunisim(int urunisim){this.urunisim=urunisim;}
+    public void setUrunisim(String urunisim){this.urunisim=urunisim;}
 
 }

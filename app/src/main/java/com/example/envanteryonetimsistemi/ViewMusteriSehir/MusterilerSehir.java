@@ -2,21 +2,16 @@ package com.example.envanteryonetimsistemi.ViewMusteriSehir;
 
 import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.envanteryonetimsistemi.R;
-import com.example.envanteryonetimsistemi.ViewDepoUrun.DepoUrun;
-import com.example.envanteryonetimsistemi.ViewDepoUrun.DepoUrunAdapter;
-import com.example.envanteryonetimsistemi.ViewDepoUrun.DepoUrunApi;
-import com.example.envanteryonetimsistemi.ViewDepoUrun.DepolarinUrunleri;
 
 import java.util.ArrayList;
 
@@ -75,7 +70,7 @@ public class MusterilerSehir extends AppCompatActivity {
                         rv.setAdapter(musteriSehirAdapter);
                     }
                 }else{
-                    Toast.makeText(MusterilerSehir.this, "Liste Boş", Toast.LENGTH_SHORT).show();}
+                    Toast.makeText(MusterilerSehir.this, "Liste Bos", Toast.LENGTH_SHORT).show();}
             }
 
             @Override
