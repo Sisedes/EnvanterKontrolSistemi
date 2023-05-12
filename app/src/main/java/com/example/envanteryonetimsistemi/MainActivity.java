@@ -5,6 +5,7 @@ import static com.example.envanteryonetimsistemi.IPAdresi.ip;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         TextView btnurunler = (TextView) findViewById(R.id.btn_urunler);
         TextView totaluruntxt=findViewById(R.id.tv_toplamurun);
         TextView totaldepotxt=findViewById(R.id.tv_toplamkar);
+
+
         btnurunler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +89,54 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //region liste yenile
+        ImageButton yenile=findViewById(R.id.btn_yenileanasayfa);
+        yenile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://"+ip+"/phpKodlari/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+
+                UrunApi urunAPI = retrofit.create(UrunApi.class);
+
+                Call<ArrayList<Urun>> callurun = urunAPI.callArraylist();
+
+                callurun.enqueue(new Callback<ArrayList<Urun>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<Urun>> call, Response<ArrayList<Urun>> response) {
+                        if (response.isSuccessful() && response.body() != null){
+                            ArrayList<Urun> totalurun = response.body();
+                            totaluruntxt.setText(String.valueOf(totalurun.size()));
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ArrayList<Urun>> call, Throwable t) {
+                    }
+                });
+
+                DepoApi depoAPI = retrofit.create(DepoApi.class);
+
+                Call<ArrayList<Depo>> calldepo = depoAPI.callArraylist();
+                calldepo.enqueue(new Callback<ArrayList<Depo>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<Depo>> call, Response<ArrayList<Depo>> response) {
+                        if (response.isSuccessful() && response.body() != null){
+                            ArrayList<Depo> totaldepo = response.body();
+                            totaldepotxt.setText(String.valueOf(totaldepo.size()));
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ArrayList<Depo>> call, Throwable t) {
+                    }
+                });
+            }
+        });
+        //endregion
 
         //region Total ürünleri yazdırma
         Retrofit retrofit = new Retrofit.Builder()

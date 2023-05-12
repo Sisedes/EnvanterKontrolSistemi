@@ -57,7 +57,7 @@
                 android:layout_width="46dp"
                 android:layout_height="16dp"
                 android:layout_marginStart="88dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="22dp"
                 android:textSize="12dp"
                 app:layout_constraintStart_toEndOf="@+id/tv_urunid"
                 app:layout_constraintTop_toTopOf="parent" />
