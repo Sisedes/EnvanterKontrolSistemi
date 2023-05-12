@@ -47,12 +47,11 @@
                 android:id="@+id/tv_urunid"
                 android:layout_width="47dp"
                 android:layout_height="15dp"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/black"
+                android:layout_marginTop="22dp"
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.307"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textView32"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -78,11 +77,10 @@
                 android:id="@+id/textView32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
                 android:text="Urun ID: "
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/tv_urunid"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView25"
                 app:layout_constraintTop_toTopOf="parent" />
 

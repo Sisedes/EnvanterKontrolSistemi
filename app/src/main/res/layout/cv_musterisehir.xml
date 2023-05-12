@@ -47,8 +47,8 @@
                 android:id="@+id/tv_sehirkodd"
                 android:layout_width="45dp"
                 android:layout_height="22dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="22dp"
 
                 app:layout_constraintStart_toEndOf="@+id/textView46"
                 app:layout_constraintTop_toTopOf="parent" />
