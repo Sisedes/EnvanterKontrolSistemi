@@ -143,6 +143,7 @@ public class Musteriler extends AppCompatActivity {
     }
 
     //region yazdırmak için gerekli metot
+    //bu regionda bulunan kod yapısı https://www.techypid.com/display-mysql-data-in-android-studio-recyclerview/ sitesinden örnek alınarak yazılmıştır. (12.05.2023)
     protected void viewJsonDataMusteriler() {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl)
                 .addConverterFactory(GsonConverterFactory.create())

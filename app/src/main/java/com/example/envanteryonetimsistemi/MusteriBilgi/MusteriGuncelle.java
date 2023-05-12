@@ -80,6 +80,7 @@ public class MusteriGuncelle extends AppCompatActivity {
                     }
                 };
                 queue.add(stringRequest);
+                //onClick içindeki code bloğunun büyük çoğunluğu: https://www.codeseasy.com/google-volley-android/ sitedene alınmıştır(27.04.2023)
                 //endregion
             }
         });

@@ -90,6 +90,7 @@ public class Urunler extends AppCompatActivity {
         });
 
         //region silme işlemi
+        //bu regionda bulunan kod yapısı https://www.techypid.com/display-mysql-data-in-android-studio-recyclerview/ sitesinden örnek alınarak yazılmıştır. (12.05.2023)
         btnurunidsil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
