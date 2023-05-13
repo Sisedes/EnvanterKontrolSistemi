@@ -1,4 +1,6 @@
 Projeyi çalıştırmak için gerekli olanlar:
+!!!LÜTFEN PROJE İÇİNDEKİ GEREKLİLİKLER DOSYASIDAKİLERİ KULLANIN!!!
+
 1-Xampp indirin: indirme linki: https://www.apachefriends.org/tr/download.html
 2-Dosyalar içinde vermiş olduğumuz phpKodlari adlı dosyayı Xampp'in kurulu olduğu dosya içindeki htdocs içine atın
 (Konumu değiştirilmediyse: C:\xampp\htdocs)
