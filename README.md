@@ -6,6 +6,7 @@ Projeyi çalıştırmak için gerekli olanlar:
 
 2-Dosyalar içinde vermiş olduğumuz phpKodlari adlı dosyayı Xampp'in kurulu olduğu dosya içindeki htdocs içine atın
 (Konumu değiştirilmediyse: C:\xampp\htdocs)
+
 3-Xampp'i açtıktan sonra Apache ve MySQL sunucularını başlatın ve MySQL'in yanında bulunan Admin butonuna tıklayın.
 (Eğer açılmassa tarayıcınızdan localhost/phpmyadmin yazarak giriş yapın)
 
