@@ -1,4 +1,5 @@
 # EnvanterKontrolSistemi
+!Projenin yorumları discussions kısmında!
 Projeyi çalıştırmak için gerekli olanlar:
 !!!LÜTFEN PROJE İÇİNDEKİ GEREKLİLİKLER DOSYASIDAKİLERİ KULLANIN!!!
 
